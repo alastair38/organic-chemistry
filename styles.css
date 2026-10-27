@@ -132,9 +132,7 @@ body {
 }
 
 .brand-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  border-radius: 50%;
   background: var(--text-primary);
   color: var(--bg-canvas);
   display: grid;
@@ -143,6 +141,7 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: -0.03em;
+  padding: .25rem;
 }
 
 .brand-text {
