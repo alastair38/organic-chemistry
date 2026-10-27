@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Reaction Processes &amp; Chemical Structures — SQA Higher Chemistry</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">C=O</div>
+        <div class="brand-text">
+          <span class="brand-title">Higher Chemistry</span>
+          <span class="brand-subtitle">SQA Nature's Chemistry</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">1. Revision Plan &amp; Map</a></li>
+          <li><a href="reactions.html" class="nav-link active">2. Visual Reactions</a></li>
+          <li><a href="flashcards.html" class="nav-link">3. Flashcards</a></li>
+          <li><a href="quiz.html" class="nav-link">4. Practice Quiz &amp; Lab</a></li>
+          <li><a href="resources.html" class="nav-link">5. Videos &amp; Resources</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-progress" title="Overall Revision Mastery">
+        <span>Mastery</span>
+        <div class="progress-mini-bar">
+          <div class="progress-mini-fill" id="global-progress-fill"></div>
+        </div>
+        <strong id="global-progress-pct">0%</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="eyebrow">Visual Reaction Explorer &bull; Structural Formulae &amp; Mechanisms</div>
+      <h1 class="page-title">Processes, Functional Groups &amp; Chemical Structures</h1>
+      <p class="page-lead">
+        Step through bond-breaking and bond-forming processes visually, inspect full structural formulae for every
+        homologous series, and master the mandatory laboratory setups required for SQA Higher Chemistry.
+      </p>
+
+      <!-- Quick Jump Bar -->
+      <div class="filter-bar" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <a href="#animator" class="filter-btn active">Interactive Step-by-Step Animator</a>
+        <a href="#alkenes" class="filter-btn">1. Alkenes &amp; Hydration</a>
+        <a href="#oxidation" class="filter-btn">2. Alcohols &amp; Oxidation</a>
+        <a href="#esters" class="filter-btn">3. Esters &amp; Hydrolysis</a>
+        <a href="#fats-soaps" class="filter-btn">4. Fats, Oils &amp; Soaps</a>
+        <a href="#proteins" class="filter-btn">5. Proteins &amp; Peptides</a>
+        <a href="#terpenes" class="filter-btn">6. Terpenes &amp; Isoprene</a>
+      </div>
+    </section>
+
+    <!-- Interactive Step-by-Step Bond-Breaking & Bond-Forming Visualizer -->
+    <section class="section" id="animator">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Interactive Reaction Process Visualizer</h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 0.2rem;">
+            Select a reaction family and step through the process to see exactly which bonds break, which small molecules are eliminated or added, and how the product structure forms.
+          </p>
+        </div>
+        <span class="section-subtitle" id="anim-step-indicator">Step 1 of 3</span>
+      </div>
+
+      <!-- Process Selector Tabs -->
+      <div class="filter-bar" id="anim-process-tabs">
+        <button type="button" class="filter-btn active" data-process="esterification">A. Esterification (Condensation)</button>
+        <button type="button" class="filter-btn" data-process="oxidation">B. 1° Alcohol Oxidation (O:H Ratio)</button>
+        <button type="button" class="filter-btn" data-process="peptide">C. Peptide Link Formation (Proteins)</button>
+        <button type="button" class="filter-btn" data-process="saponification">D. Saponification of Fat/Oil (Soap)</button>
+      </div>
+
+      <div class="card" style="padding: 1.75rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <span class="badge badge-ester" id="anim-badge">Condensation Reaction &bull; Conc. H₂SO₄ Catalyst</span>
+            <h3 style="font-size: 1.25rem; margin-top: 0.35rem;" id="anim-title">Ethanoic Acid + Propan-1-ol &rightleftharpoons; Propyl Ethanoate + Water</h3>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="button" class="btn btn-sm" id="anim-prev-btn">&larr; Previous Step</button>
+            <button type="button" class="btn btn-sm btn-primary" id="anim-next-btn">Next Step &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step Progress Pills -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1.25rem;">
+          <button type="button" class="btn btn-sm anim-step-btn btn-primary" data-step="0">1. Identify Functional Groups</button>
+          <button type="button" class="btn btn-sm anim-step-btn" data-step="1">2. Bond Breaking &amp; Transfer</button>
+          <button type="button" class="btn btn-sm anim-step-btn" data-step="2">3. Final Product Structure</button>
+        </div>
+
+        <!-- SVG Stage -->
+        <div class="structure-stage" id="anim-svg-container" style="min-height: 240px; background: #FCFBF9; justify-content: center;">
+          <!-- Injected dynamically by JS -->
+        </div>
+
+        <!-- Step Explanation Box -->
+        <div class="callout" style="margin-top: 1rem; margin-bottom: 0;" id="anim-explanation">
+          <!-- Injected dynamically by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Alkenes: Addition & Dehydration -->
+    <section class="section" id="alkenes">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-alkene">Section 1 &bull; Unsaturated Hydrocarbons</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Alkenes: Addition Reactions &amp; Alcohol Dehydration</h2>
+        </div>
+        <span class="section-subtitle">C=C Functional Group</span>
+      </div>
+
+      <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Alkenes contain the unsaturated <strong>carbon-to-carbon double bond (C=C)</strong>. In an <strong>addition reaction</strong>, one bond of the C=C double bond breaks open and two new atoms or groups join across the two carbon atoms, forming a single saturated product (100% atom economy).
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span>Hydration of Unsymmetrical Alkenes</span>
+            <span class="badge badge-hydroxyl">+ H₂O (H₃PO₄ catalyst)</span>
+          </div>
+          <p class="card-body">
+            When steam (H–OH) adds across an unsymmetrical alkene like <strong>propene</strong>, two structural isomers form depending on which carbon receives the –OH group:
+          </p>
+
+          <div class="structure-stage">
+            <svg viewBox="0 0 500 220" width="100%" height="auto" aria-label="Hydration of propene to propan-2-ol and propan-1-ol">
+              <!-- Propene -->
+              <rect x="10" y="65" width="135" height="90" rx="6" fill="#ECFDF5" stroke="#059669" />
+              <text x="77" y="88" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#065F46">Propene</text>
+              <text x="77" y="115" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">CH₃–CH=CH₂</text>
+              <text x="77" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#059669">+ H–OH (H⁺)</text>
+
+              <!-- Upper Arrow to Major -->
+              <path d="M 148 95 L 225 55" stroke="#0D9488" stroke-width="2" fill="none" />
+              <text x="182" y="62" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#0D9488">Major</text>
+
+              <!-- Lower Arrow to Minor -->
+              <path d="M 148 125 L 225 165" stroke="#52525B" stroke-width="1.6" stroke-dasharray="4 2" fill="none" />
+              <text x="182" y="160" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#52525B">Minor</text>
+
+              <!-- Propan-2-ol (Major) -->
+              <rect x="230" y="12" width="255" height="86" rx="6" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.8" />
+              <text x="357" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#115E59">Propan-2-ol (MAJOR • 2° Alcohol)</text>
+              <text x="357" y="58" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">CH₃ – CH(OH) – CH₃</text>
+              <text x="357" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0D9488">–OH attaches to middle C2 carbon</text>
+
+              <!-- Propan-1-ol (Minor) -->
+              <rect x="230" y="120" width="255" height="86" rx="6" fill="#FFFFFF" stroke="#C8C4B8" stroke-width="1.5" />
+              <text x="357" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#52525B">Propan-1-ol (MINOR • 1° Alcohol)</text>
+              <text x="357" y="166" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">CH₃ – CH₂ – CH₂OH</text>
+              <text x="357" y="188" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#71717A">–OH attaches to terminal C1 carbon</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>Hydrogenation, Bromination &amp; Dehydration</span>
+            <span class="badge badge-alkene">Core Reactions</span>
+          </div>
+          <div class="card-body">
+            <p style="margin-bottom: 0.75rem;">
+              <strong>1. Catalytic Hydrogenation (+H₂):</strong> Alkenes react with hydrogen gas over a finely divided <strong>nickel (Ni) catalyst</strong> to form saturated alkanes. In the food industry, this <em>hardens</em> liquid unsaturated vegetable oils into spreadable solid fats (margarine) by removing C=C kinks and increasing London dispersion forces.
+            </p>
+            <p style="margin-bottom: 0.75rem;">
+              <strong>2. Bromination (+Br₂):</strong> Adding orange/brown bromine solution across a C=C bond forms a colourless 1,2-dibromoalkane immediately. The volume of Br₂ required is directly proportional to the number of C=C double bonds.
+            </p>
+            <p>
+              <strong>3. Dehydration of Alcohols (Elimination):</strong> Passing alcohol vapour over heated <strong>aluminium oxide (Al₂O₃)</strong> catalyst removes H₂O to form an alkene. Dehydrating <em>butan-2-ol</em> yields a mixture of <strong>but-1-ene</strong> and <strong>but-2-ene</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Alcohols, Oxidation & Carbonyl Compounds -->
+    <section class="section" id="oxidation">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-carbonyl">Section 2 &bull; Hydroxyl &amp; Carbonyl Chemistry</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Alcohol Classification (1°, 2°, 3°) &amp; Oxidation Pathways</h2>
+        </div>
+        <span class="section-subtitle">O:H Ratio &amp; Oxidising Agents</span>
+      </div>
+
+      <!-- Structural Comparison of 1°, 2°, 3° Alcohols -->
+      <div class="structure-stage" style="background: var(--bg-card); padding: 1.5rem; margin-bottom: 1.5rem;">
+        <svg viewBox="0 0 960 250" width="100%" height="auto" aria-label="Comparison of Primary, Secondary, and Tertiary Alcohol Structures">
+          <!-- Primary Alcohol -->
+          <g transform="translate(15, 10)">
+            <rect width="295" height="225" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.5" />
+            <text x="147" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#115E59">PRIMARY (1°) ALCOHOL</text>
+            <text x="147" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0D9488">Propan-1-ol</text>
+            <!-- Formula Drawing -->
+            <text x="147" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">      H   H</text>
+            <text x="147" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">      |   |</text>
+            <text x="147" y="124" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">CH₃ – C – C – OH</text>
+            <text x="147" y="142" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">      |   |</text>
+            <text x="147" y="160" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#0D9488" font-weight="600">      H   H (2 α-H atoms)</text>
+            <text x="147" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#18181B">C–OH bonded to <strong>1 carbon</strong></text>
+            <text x="147" y="210" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#D97706">[O] &rarr; Aldehyde &rarr; Carboxylic Acid</text>
+          </g>
+
+          <!-- Secondary Alcohol -->
+          <g transform="translate(332, 10)">
+            <rect width="295" height="225" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5" />
+            <text x="147" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#92400E">SECONDARY (2°) ALCOHOL</text>
+            <text x="147" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D97706">Propan-2-ol</text>
+            <!-- Formula Drawing -->
+            <text x="147" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">          OH</text>
+            <text x="147" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">          |</text>
+            <text x="147" y="124" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">CH₃ – C – CH₃</text>
+            <text x="147" y="142" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">          |</text>
+            <text x="147" y="160" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#D97706" font-weight="600">          H (1 α-H atom)</text>
+            <text x="147" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#18181B">C–OH bonded to <strong>2 carbons</strong></text>
+            <text x="147" y="210" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#D97706">[O] &rarr; Ketone (Stops here)</text>
+          </g>
+
+          <!-- Tertiary Alcohol -->
+          <g transform="translate(650, 10)">
+            <rect width="295" height="225" rx="8" fill="#F3F1EC" stroke="#71717A" stroke-width="1.5" />
+            <text x="147" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#52525B">TERTIARY (3°) ALCOHOL</text>
+            <text x="147" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#52525B">2-methylpropan-2-ol</text>
+            <!-- Formula Drawing -->
+            <text x="147" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">          OH</text>
+            <text x="147" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">          |</text>
+            <text x="147" y="124" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">CH₃ – C – CH₃</text>
+            <text x="147" y="142" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#18181B">          |</text>
+            <text x="147" y="160" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#DC2626" font-weight="600">          CH₃ (NO α-H atom!)</text>
+            <text x="147" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#18181B">C–OH bonded to <strong>3 carbons</strong></text>
+            <text x="147" y="210" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#DC2626">[O] &rarr; NO REACTION</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Interactive O:H Ratio Calculator -->
+      <div class="card">
+        <div class="card-title">
+          <span>Interactive O:H Ratio Oxidation &amp; Reduction Analyzer</span>
+          <span class="badge badge-carbonyl">SQA Calculation Skill</span>
+        </div>
+        <p class="card-body" style="margin-bottom: 1rem;">
+          In SQA Higher Chemistry, <strong>oxidation</strong> is defined as an <strong>increase in the oxygen-to-hydrogen (O:H) ratio</strong>, and <strong>reduction</strong> is a <strong>decrease in the O:H ratio</strong>. Choose a reaction below to inspect the exact O:H calculation:
+        </p>
+
+        <div class="filter-bar" id="oh-calc-buttons" style="margin-bottom: 1rem;">
+          <button type="button" class="filter-btn active" data-oh="ethanol_ethanal">Ethanol &rarr; Ethanal</button>
+          <button type="button" class="filter-btn" data-oh="ethanal_ethanoic">Ethanal &rarr; Ethanoic Acid</button>
+          <button type="button" class="filter-btn" data-oh="propan2ol_propanone">Propan-2-ol &rarr; Propanone</button>
+          <button type="button" class="filter-btn" data-oh="propanoic_propanol">Propanoic Acid &rarr; Propan-1-ol</button>
+          <button type="button" class="filter-btn" data-oh="menthol_menthone">Menthol &rarr; Menthone (Terpenoid)</button>
+        </div>
+
+        <div id="oh-calc-display" style="background: var(--bg-subtle); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Esters: Esterification, Mandatory Lab Setup & Hydrolysis -->
+    <section class="section" id="esters">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-ester">Section 3 &bull; Condensation &amp; Hydrolysis</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Esters: Synthesis, Mandatory Apparatus &amp; Hydrolysis</h2>
+        </div>
+        <span class="section-subtitle">–COO– Ester Link</span>
+      </div>
+
+      <div class="grid-2">
+        <!-- Mandatory Lab Setup SVG -->
+        <div class="card">
+          <div class="card-title">
+            <span>Mandatory Practical: Making an Ester</span>
+            <span class="badge badge-ester">SQA Apparatus Q</span>
+          </div>
+          <p class="card-body">
+            Alcohols and carboxylic acids are heated gently in a water bath with concentrated H₂SO₄ catalyst, then poured into sodium hydrogencarbonate solution.
+          </p>
+
+          <div class="structure-stage" style="background: #FCFBF9;">
+            <svg viewBox="0 0 440 270" width="100%" height="auto" aria-label="Laboratory apparatus for preparing an ester">
+              <!-- Beaker (Hot Water Bath) -->
+              <path d="M 80 110 L 80 245 Q 80 255 90 255 L 220 255 Q 230 255 230 245 L 230 110" fill="none" stroke="#18181B" stroke-width="2.2" />
+              <!-- Water Level in Beaker -->
+              <path d="M 82 145 L 228 145 L 228 248 Q 228 253 220 253 L 90 253 Q 82 253 82 248 Z" fill="#E0F2FE" opacity="0.7" />
+              <text x="115" y="242" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0369A1">Hot water bath</text>
+
+              <!-- Boiling Tube (Angled slightly or vertical) -->
+              <path d="M 135 35 L 135 215 Q 135 230 155 230 Q 175 230 175 215 L 175 35" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+              <!-- Reaction mixture inside tube -->
+              <path d="M 137 165 L 173 165 L 173 215 Q 173 228 155 228 Q 137 228 137 215 Z" fill="#FEF3C7" />
+
+              <!-- Wet Paper Towel Condenser -->
+              <rect x="127" y="55" width="56" height="36" rx="4" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.8" />
+              <!-- Loose cotton wool plug -->
+              <ellipse cx="155" cy="33" rx="16" ry="7" fill="#E4E4E7" stroke="#71717A" stroke-dasharray="2 2" />
+
+              <!-- Callout Labels -->
+              <line x1="183" y1="73" x2="245" y2="55" stroke="#0D9488" stroke-width="1.5" />
+              <text x="250" y="52" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#115E59">Wet paper towel condenser</text>
+              <text x="250" y="66" font-family="Inter, sans-serif" font-size="10" fill="#52525B">Cools &amp; condenses volatile vapours</text>
+
+              <line x1="173" y1="190" x2="245" y2="120" stroke="#4F46E5" stroke-width="1.5" />
+              <text x="250" y="116" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#3730A3">Alcohol + Acid + conc. H₂SO₄</text>
+              <text x="250" y="130" font-family="Inter, sans-serif" font-size="10" fill="#52525B">H₂SO₄ is catalyst &amp; dehydrating agent</text>
+
+              <line x1="230" y1="195" x2="250" y2="180" stroke="#0369A1" stroke-width="1.5" />
+              <text x="255" y="176" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#0369A1">No naked Bunsen flame</text>
+              <text x="255" y="190" font-family="Inter, sans-serif" font-size="10" fill="#52525B">Alcohols &amp; esters are flammable</text>
+
+              <text x="250" y="226" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#18181B">Pour into NaHCO₃(aq) after:</text>
+              <text x="250" y="240" font-family="Inter, sans-serif" font-size="10" fill="#52525B">Neutralises acid; ester floats as</text>
+              <text x="250" y="252" font-family="Inter, sans-serif" font-size="10" fill="#52525B">an oily layer with a sweet smell.</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Interactive Ester Synthesizer & Namer -->
+        <div class="card">
+          <div class="card-title">
+            <span>Interactive Ester Builder &amp; Namer</span>
+            <span class="badge badge-ester">Try Combinations</span>
+          </div>
+          <p class="card-body" style="margin-bottom: 1rem;">
+            Select any parent alcohol and parent carboxylic acid below to generate the systematic ester name, shortened structural formula, and hydrolysis products:
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+            <div>
+              <label for="ester-alcohol-select" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--fg-hydroxyl); font-weight: 600; margin-bottom: 0.3rem;">1. PARENT ALCOHOL (-yl)</label>
+              <select id="ester-alcohol-select" style="width: 100%; padding: 0.55rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); font-family: var(--font-sans);">
+                <option value="methanol">Methanol (CH₃OH)</option>
+                <option value="ethanol">Ethanol (CH₃CH₂OH)</option>
+                <option value="propanol" selected>Propan-1-ol (CH₃CH₂CH₂OH)</option>
+                <option value="butanol">Butan-1-ol (CH₃CH₂CH₂CH₂OH)</option>
+                <option value="pentanol">Pentan-1-ol (C₅H₁₁OH)</option>
+              </select>
+            </div>
+            <div>
+              <label for="ester-acid-select" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--fg-carboxyl); font-weight: 600; margin-bottom: 0.3rem;">2. CARBOXYLIC ACID (-oate)</label>
+              <select id="ester-acid-select" style="width: 100%; padding: 0.55rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); font-family: var(--font-sans);">
+                <option value="methanoic">Methanoic acid (HCOOH)</option>
+                <option value="ethanoic" selected>Ethanoic acid (CH₃COOH)</option>
+                <option value="propanoic">Propanoic acid (CH₃CH₂COOH)</option>
+                <option value="butanoic">Butanoic acid (CH₃CH₂CH₂COOH)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="ester-builder-output" style="background: var(--bg-subtle); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Fats, Oils, Soaps & Emulsifiers -->
+    <section class="section" id="fats-soaps">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-hydroxyl">Section 4 &bull; Triesters, Saponification &amp; Emulsions</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Edible Fats &amp; Oils, Soaps, Detergents &amp; Emulsifiers</h2>
+        </div>
+        <span class="section-subtitle">Propane-1,2,3-triol &amp; Micelles</span>
+      </div>
+
+      <div class="grid-2">
+        <!-- Fats vs Oils Packing & LDFs -->
+        <div class="card">
+          <div class="card-title">
+            <span>Why Fats Are Solid &amp; Oils Are Liquid</span>
+            <span class="badge badge-alkene">3-Mark Exam Classic</span>
+          </div>
+          <p class="card-body">
+            Both fats and oils are <strong>triesters (triglycerides)</strong> formed from <strong>1 molecule of glycerol (propane-1,2,3-triol)</strong> and <strong>3 fatty acid molecules</strong>.
+          </p>
+
+          <div class="structure-stage">
+            <svg viewBox="0 0 460 215" width="100%" height="auto" aria-label="Comparison of saturated fat close packing vs unsaturated oil kinked chains">
+              <!-- Saturated Fat -->
+              <rect x="10" y="10" width="210" height="195" rx="6" fill="#F3F1EC" stroke="#C8C4B8" />
+              <text x="115" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#18181B">Saturated Fat (Solid)</text>
+              <line x1="30" y1="50" x2="30" y2="115" stroke="#4F46E5" stroke-width="4" />
+              <polyline points="30,55 60,48 90,55 120,48 150,55 180,48 200,55" fill="none" stroke="#18181B" stroke-width="2.2" />
+              <polyline points="30,82 60,75 90,82 120,75 150,82 180,75 200,82" fill="none" stroke="#18181B" stroke-width="2.2" />
+              <polyline points="30,109 60,102 90,109 120,102 150,109 180,102 200,109" fill="none" stroke="#18181B" stroke-width="2.2" />
+              <text x="115" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#18181B">&bull; Straight saturated C–C chains</text>
+              <text x="115" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#18181B">&bull; <strong>Close packing</strong> of molecules</text>
+              <text x="115" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#059669" font-weight="600">&bull; Stronger LDFs &rarr; Higher m.p.</text>
+
+              <!-- Unsaturated Oil -->
+              <rect x="240" y="10" width="210" height="195" rx="6" fill="#ECFDF5" stroke="#059669" />
+              <text x="345" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#065F46">Unsaturated Oil (Liquid)</text>
+              <line x1="260" y1="50" x2="260" y2="115" stroke="#4F46E5" stroke-width="4" />
+              <polyline points="260,55 290,48 320,55 350,48 380,55 410,48 430,55" fill="none" stroke="#18181B" stroke-width="2.2" />
+              <polyline points="260,82 290,75 320,82 350,68 380,95 410,112 430,105" fill="none" stroke="#059669" stroke-width="2.5" />
+              <polyline points="260,109 290,102 320,115 350,132 380,122 410,138 430,132" fill="none" stroke="#059669" stroke-width="2.5" />
+              <text x="345" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#18181B">&bull; C=C bonds cause <strong>kinks/bends</strong></text>
+              <text x="345" y="164" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#18181B">&bull; Prevents close packing</text>
+              <text x="345" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#DC2626" font-weight="600">&bull; Weaker LDFs &rarr; Lower m.p.</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Soaps, Micelles & Emulsifiers -->
+        <div class="card">
+          <div class="card-title">
+            <span>Soap Structure, Micelles &amp; Food Emulsifiers</span>
+            <span class="badge badge-hydroxyl">Hydrophobic vs Hydrophilic</span>
+          </div>
+          <p class="card-body">
+            Alkaline hydrolysis of fats/oils with NaOH produces <strong>soap</strong> (e.g. sodium stearate, C₁₇H₃₅COO⁻Na⁺).
+          </p>
+
+          <div class="structure-stage">
+            <svg viewBox="0 0 460 215" width="100%" height="auto" aria-label="Soap ion structure and spherical micelle trapping grease in water">
+              <!-- Soap Ion Structure -->
+              <rect x="10" y="12" width="440" height="75" rx="6" fill="#FFFFFF" stroke="#C8C4B8" />
+              <polyline points="28,45 50,30 72,45 94,30 116,45 138,30 160,45 182,30 204,45 226,30 248,45 270,30" fill="none" stroke="#18181B" stroke-width="2.5" />
+              <circle cx="290" cy="38" r="18" fill="#0D9488" />
+              <text x="290" y="42" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="11" fill="#FFFFFF">COO⁻</text>
+              <text x="145" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#52525B">Hydrophobic Tail (Non-polar &rarr; Grease)</text>
+              <text x="365" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0D9488">Hydrophilic Head</text>
+              <text x="365" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#52525B">(Ionic &rarr; Polar Water)</text>
+
+              <!-- Micelle vs Emulsifier Note -->
+              <rect x="10" y="100" width="215" height="105" rx="6" fill="#F0FDFA" stroke="#0D9488" />
+              <text x="117" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#115E59">Soap Micelle in Water</text>
+              <circle cx="65" cy="160" r="22" fill="#FDE68A" stroke="#D97706" />
+              <text x="65" y="164" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#92400E">Grease</text>
+              <!-- Negative heads around grease -->
+              <circle cx="65" cy="128" r="6" fill="#0D9488" />
+              <circle cx="65" cy="192" r="6" fill="#0D9488" />
+              <circle cx="33" cy="160" r="6" fill="#0D9488" />
+              <circle cx="97" cy="160" r="6" fill="#0D9488" />
+              <text x="160" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#18181B">Tails in grease;</text>
+              <text x="160" y="163" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#18181B">–COO⁻ heads repel</text>
+              <text x="160" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#0D9488" font-weight="600">to form emulsion</text>
+
+              <!-- Food Emulsifiers -->
+              <rect x="235" y="100" width="215" height="105" rx="6" fill="#EEF2FF" stroke="#4F46E5" />
+              <text x="342" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#3730A3">Food Emulsifiers (E-numbers)</text>
+              <text x="342" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#18181B">Made from <strong>glycerol + 1 or 2</strong></text>
+              <text x="342" y="157" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#18181B"><strong>fatty acids</strong> (mono-/diglycerides).</text>
+              <text x="342" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#0D9488" font-weight="600">&bull; Head: Unreacted –OH groups</text>
+              <text x="342" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#52525B">&bull; Tail: Fatty acid chains</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Proteins & Amino Acids -->
+    <section class="section" id="proteins">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-amide">Section 5 &bull; Natural Polyamides</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Proteins: Peptide Links, Hydrolysis &amp; Denaturation</h2>
+        </div>
+        <span class="section-subtitle">–CONH– Amide Link</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span>Condensation &amp; Hydrolysis of Peptide Links</span>
+            <span class="badge badge-amide">–NH₂ + –COOH</span>
+          </div>
+          <p class="card-body">
+            Amino acids contain both an <strong>amino group (–NH₂)</strong> and a <strong>carboxyl group (–COOH)</strong>. They join by condensation polymerisation, eliminating water to form <strong>peptide (amide) links (–CONH–)</strong>.
+          </p>
+          <div class="callout" style="border-left-color: var(--fg-amide);">
+            <div class="callout-title">Exam Tip: Drawing Amino Acids from a Protein Segment</div>
+            When asked to draw the amino acids formed by hydrolysing a protein section, draw a vertical split line through every <strong>C(=O) — N(H)</strong> bond, then add <strong>–OH</strong> back onto the C=O carbon and <strong>–H</strong> back onto the N–H nitrogen!
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>Denaturation vs Hydrolysis</span>
+            <span class="badge badge-carboxyl">Crucial Distinction</span>
+          </div>
+          <div class="table-wrap" style="margin-top: 0.5rem;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Protein Denaturation</th>
+                  <th>Protein Hydrolysis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Cause</strong></td>
+                  <td>Increasing temperature (heat) or changing pH.</td>
+                  <td>Heating under reflux with acid/alkali or enzyme digestion (+H₂O).</td>
+                </tr>
+                <tr>
+                  <td><strong>Bonds Broken</strong></td>
+                  <td>Weak intermolecular <strong>hydrogen bonds</strong> holding the 3D coiled shape.</td>
+                  <td>Strong covalent <strong>peptide links (–CONH–)</strong> along the polymer chain.</td>
+                </tr>
+                <tr>
+                  <td><strong>Result</strong></td>
+                  <td>3D shape unfolds; enzyme active site changes shape; texture changes (e.g. cooked egg white).</td>
+                  <td>Polypeptide breaks down completely into individual <strong>amino acid</strong> molecules.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Terpenes & Essential Oils -->
+    <section class="section" id="terpenes">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-alkene">Section 6 &bull; Chemistry of Fragrances</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Terpenes, Isoprene Units &amp; Terpenoid Oxidation</h2>
+        </div>
+        <span class="section-subtitle">2-methylbuta-1,3-diene (C₅H₈)</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span>The Isoprene Building Block (C₅H₈)</span>
+            <span class="badge badge-alkene">2-methylbuta-1,3-diene</span>
+          </div>
+          <p class="card-body">
+            Terpenes are unsaturated hydrocarbons found in essential oils, built by joining together units of <strong>isoprene</strong> (systematic name: <strong>2-methylbuta-1,3-diene</strong>, molecular formula <strong>C₅H₈</strong>).
+          </p>
+          <div class="structure-stage">
+            <svg viewBox="0 0 440 165" width="100%" height="auto" aria-label="Full structural formula of isoprene (2-methylbuta-1,3-diene)">
+              <rect x="15" y="10" width="410" height="145" rx="8" fill="#ECFDF5" stroke="#059669" stroke-width="1.5" />
+              <text x="220" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="13" fill="#065F46">ISOPRENE (2-methylbuta-1,3-diene • C₅H₈)</text>
+              <text x="220" y="65" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#DC2626">      CH₃</text>
+              <text x="220" y="83" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#18181B">      |</text>
+              <text x="220" y="102" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#18181B">H₂C = C – C = CH₂</text>
+              <text x="220" y="120" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#18181B">          |</text>
+              <text x="220" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#18181B">          H</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>Counting Isoprene Units &amp; Oxidation</span>
+            <span class="badge badge-carbonyl">Terpene &rarr; Terpenoid</span>
+          </div>
+          <div class="card-body">
+            <p style="margin-bottom: 0.75rem;">
+              <strong>Counting Rule:</strong> Because every isoprene unit contains exactly <strong>5 carbon atoms</strong>, divide the total number of carbons in the terpene skeleton by 5:
+            </p>
+            <ul style="margin-left: 1.25rem; margin-bottom: 0.9rem;">
+              <li><strong>Limonene / Menthol (C₁₀):</strong> 10 &divide; 5 = <strong>2 isoprene units</strong></li>
+              <li><strong>Farnesene / Bisabolene (C₁₅):</strong> 15 &divide; 5 = <strong>3 isoprene units</strong></li>
+              <li><strong>Squalene (C₃₀H₅₀):</strong> 30 &divide; 5 = <strong>6 isoprene units</strong></li>
+              <li><strong>&beta;-Carotene (C₄₀H₅₆):</strong> 40 &divide; 5 = <strong>8 isoprene units</strong></li>
+            </ul>
+            <p>
+              <strong>Oxidation of Terpenes:</strong> Terpenes can be oxidised within plants (or on exposure to light and air) to produce oxygenated <strong>terpenoids</strong> (alcohols, aldehydes, ketones) responsible for distinctive spice and herb fragrances. Essential oils are stored in <strong>dark brown glass bottles</strong> to prevent UV-accelerated oxidation from spoiling their aroma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>SQA Higher Chemistry — Visual Reaction Processes</strong><br>
+        Ready to test your recall? Move on to the interactive Flashcards or Lab Simulator.
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="flashcards.html" class="btn btn-sm btn-primary">Practice Flashcards &rarr;</a>
+        <a href="quiz.html" class="btn btn-sm">Take Practice Quiz &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // =========================================================================
+    // 1. Step-by-Step Reaction Process Animator
+    // =========================================================================
+    const ANIM_PROCESSES = {
+      esterification: {
+        badge: 'Condensation Reaction • Conc. H₂SO₄ Catalyst',
+        badgeClass: 'badge-ester',
+        title: 'Ethanoic Acid + Propan-1-ol ⇌ Propyl Ethanoate + Water',
+        steps: [
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="20" y="20" width="340" height="150" rx="8" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.8"/>
+                <text x="190" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#991B1B">Carboxylic Acid: Ethanoic acid</text>
+                <text x="190" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B">CH₃ — C(=O) — <tspan fill="#DC2626">O — H</tspan></text>
+                <text x="190" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#DC2626">Contains Carboxyl Group (–COOH)</text>
+
+                <text x="405" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="24" font-weight="600" fill="#52525B">+</text>
+
+                <rect x="450" y="20" width="350" height="150" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.8"/>
+                <text x="625" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#115E59">Alcohol: Propan-1-ol</text>
+                <text x="625" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B"><tspan fill="#0D9488">H — O</tspan> — CH₂CH₂CH₃</text>
+                <text x="625" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0D9488">Contains Hydroxyl Group (–OH)</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 1: Align the Carboxyl (–COOH) and Hydroxyl (–OH) Groups</div>
+              Ethanoic acid (2 carbons) and propan-1-ol (3 carbons) are mixed with a few drops of <strong>concentrated sulfuric acid (H₂SO₄)</strong> catalyst and warmed in a water bath.`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="30" y="20" width="760" height="150" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+                <text x="410" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#92400E">Condensation: Elimination of Water (H₂O)</text>
+                <text x="410" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B">
+                  CH₃ — C(=O) — <tspan fill="#DC2626">[ O — H</tspan>  +  <tspan fill="#0D9488">H ]</tspan> — O — CH₂CH₂CH₃
+                </text>
+                <rect x="330" y="72" width="142" height="34" rx="6" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="4 3"/>
+                <text x="401" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#DC2626">&darr; Splits out as H₂O (Water) &darr;</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 2: Elimination of a Small Molecule (Water, H₂O)</div>
+              The <strong>–OH</strong> from the carboxylic acid and the <strong>–H</strong> from the alcohol's hydroxyl group combine and split off as a molecule of <strong>water (H₂O)</strong>, allowing the carbonyl carbon to bond directly to the alcohol oxygen.`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="20" y="20" width="560" height="150" rx="8" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2"/>
+                <text x="300" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#3730A3">Ester Product: Propyl ethanoate</text>
+                <text x="300" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B">
+                  CH₃ — <tspan fill="#4F46E5">C(=O) — O</tspan> — CH₂CH₂CH₃
+                </text>
+                <text x="300" y="135" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#4F46E5">New Ester Link (–COO–) • Sweet Fruity Smell</text>
+
+                <text x="615" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="600" fill="#52525B">+</text>
+
+                <rect x="650" y="45" width="145" height="100" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.5"/>
+                <text x="722" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#0D9488">H₂O</text>
+                <text x="722" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#115E59">Water eliminated</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 3: Ester Link (–COO–) Formed</div>
+              The product is <strong>propyl ethanoate</strong> (<em>propyl</em> from propan-1-ol; <em>ethanoate</em> from ethanoic acid). Reversing this reaction by refluxing with water is <strong>hydrolysis</strong>.`
+          }
+        ]
+      },
+      oxidation: {
+        badge: 'Two-Step Oxidation • Acidified Dichromate or Hot CuO',
+        badgeClass: 'badge-carbonyl',
+        title: 'Primary Alcohol (Ethanol) → Aldehyde (Ethanal) → Carboxylic Acid (Ethanoic Acid)',
+        steps: [
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="130" y="20" width="560" height="150" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.8"/>
+                <text x="410" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#115E59">Reactant: Ethanol (Primary 1° Alcohol, C₂H₆O)</text>
+                <text x="410" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B">
+                  CH₃ — CH(<tspan fill="#DC2626">H</tspan>) — O — <tspan fill="#DC2626">H</tspan>
+                </text>
+                <text x="410" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0D9488">Initial O:H Ratio = 1 : 6 (0.167) • Two highlighted H atoms ready to be removed</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 1: Primary (1°) Alcohol Has Two Removable Hydrogens</div>
+              In ethanol (CH₃CH₂OH), the carbon attached to the –OH group has C–H bonds. When heated with orange acidified potassium dichromate (or black CuO), <strong>2 hydrogen atoms</strong> are removed to form water.`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="60" y="20" width="490" height="150" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+                <text x="305" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#92400E">Intermediate: Ethanal (Aldehyde, C₂H₄O)</text>
+                <text x="305" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B">
+                  CH₃ — <tspan fill="#D97706">C(=O) — H</tspan>
+                </text>
+                <text x="305" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D97706">O:H Ratio increases to 1 : 4 (0.25) • Collected by Distillation</text>
+
+                <text x="585" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="600" fill="#52525B">+</text>
+                <rect x="620" y="45" width="145" height="100" rx="8" fill="#F3F1EC" stroke="#C8C4B8"/>
+                <text x="692" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="17" font-weight="600" fill="#18181B">H₂O</text>
+                <text x="692" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#52525B">From 2H + [O]</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 2: Aldehyde Formed (Loss of Hydrogen = Increase in O:H Ratio)</div>
+              Removing 2H converts the C–OH into a terminal carbonyl <strong>–CHO group (ethanal)</strong>. Because ethanal still has a C–H bond on the carbonyl carbon, heating under <strong>reflux</strong> oxidises it further.`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="130" y="20" width="560" height="150" rx="8" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+                <text x="410" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#991B1B">Final Product: Ethanoic Acid (Carboxylic Acid, C₂H₄O₂)</text>
+                <text x="410" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#18181B">
+                  CH₃ — <tspan fill="#DC2626">C(=O) — O — H</tspan>
+                </text>
+                <text x="410" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#DC2626">O:H Ratio increases to 2 : 4 = 1 : 2 (0.50) • Dichromate turns Orange → Green</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 3: Carboxylic Acid Formed (Gain of Oxygen = Increase in O:H Ratio)</div>
+              In the second oxidation step, an oxygen atom [O] is inserted into the aldehyde's C–H bond to form the <strong>carboxyl group (–COOH)</strong>. Both steps increase the O:H ratio: 1:6 &rarr; 1:4 &rarr; 1:2.`
+          }
+        ]
+      },
+      peptide: {
+        badge: 'Condensation Polymerisation • Protein Synthesis',
+        badgeClass: 'badge-amide',
+        title: 'Amino Acid 1 (Glycine) + Amino Acid 2 (Alanine) ⇌ Dipeptide + Water',
+        steps: [
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="20" y="20" width="355" height="150" rx="8" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.8"/>
+                <text x="197" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#5B21B6">Amino Acid 1: Glycine</text>
+                <text x="197" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="17" font-weight="600" fill="#18181B">H₂N — CH₂ — C(=O) — <tspan fill="#DC2626">OH</tspan></text>
+                <text x="197" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#5B21B6">Carboxyl group (–COOH) on right</text>
+
+                <text x="405" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="24" font-weight="600" fill="#52525B">+</text>
+
+                <rect x="435" y="20" width="365" height="150" rx="8" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.8"/>
+                <text x="617" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#5B21B6">Amino Acid 2: Alanine</text>
+                <text x="617" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="17" font-weight="600" fill="#18181B"><tspan fill="#0D9488">H</tspan> — HN — CH(CH₃) — COOH</text>
+                <text x="617" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#5B21B6">Amino group (–NH₂) on left</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 1: Bifunctional Amino Acid Monomers</div>
+              Every amino acid has both an <strong>amino group (–NH₂)</strong> and a <strong>carboxyl group (–COOH)</strong>. They align head-to-tail so the –COOH of one molecule faces the –NH₂ of the next.`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="25" y="20" width="770" height="150" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+                <text x="410" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#92400E">Condensation: –OH from Carboxyl + –H from Amino Group</text>
+                <text x="410" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="16.5" font-weight="600" fill="#18181B">
+                  H₂N — CH₂ — C(=O) — <tspan fill="#DC2626">[ OH</tspan> + <tspan fill="#0D9488">H ]</tspan> — NH — CH(CH₃) — COOH
+                </text>
+                <text x="410" y="138" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#DC2626">&darr; Eliminates H₂O to form C–N amide bond &darr;</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 2: Water Eliminated Between –COOH and –NH₂</div>
+              Just like esterification, peptide bond formation is a <strong>condensation reaction</strong> because two molecules join together with the elimination of a small molecule (<strong>H₂O</strong>).`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="20" y="20" width="585" height="150" rx="8" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
+                <text x="312" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#5B21B6">Dipeptide with Peptide (Amide) Link (–CONH–)</text>
+                <text x="312" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="17" font-weight="600" fill="#18181B">
+                  H₂N — CH₂ — <tspan fill="#7C3AED">C(=O) — NH</tspan> — CH(CH₃) — COOH
+                </text>
+                <text x="312" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#7C3AED">Peptide Link (–CONH–) • Broken by Hydrolysis (+H₂O)</text>
+
+                <text x="630" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="600" fill="#52525B">+</text>
+                <rect x="660" y="45" width="135" height="100" rx="8" fill="#F0FDFA" stroke="#0D9488"/>
+                <text x="727" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#0D9488">H₂O</text>
+                <text x="727" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#115E59">Water</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 3: Peptide (Amide) Link Formed</div>
+              Repeating this thousands of times builds a <strong>protein</strong>. Note that the ends still have a free –NH₂ and –COOH group so the polymer chain can continue growing.`
+          }
+        ]
+      },
+      saponification: {
+        badge: 'Alkaline Hydrolysis • Saponification of Fats & Oils',
+        badgeClass: 'badge-hydroxyl',
+        title: 'Triglyceride (Fat/Oil) + 3 NaOH → Glycerol + 3 Soap Molecules',
+        steps: [
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="30" y="15" width="460" height="160" rx="8" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.8"/>
+                <text x="260" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#3730A3">1 Mole of Fat/Oil (Triester / Triglyceride)</text>
+                <text x="260" y="72" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#18181B">CH₂ — <tspan fill="#4F46E5">O — C(=O)</tspan> — C₁₇H₃₅</text>
+                <text x="260" y="102" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#18181B">CH  — <tspan fill="#4F46E5">O — C(=O)</tspan> — C₁₇H₃₅</text>
+                <text x="260" y="132" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#18181B">CH₂ — <tspan fill="#4F46E5">O — C(=O)</tspan> — C₁₇H₃₅</text>
+                <text x="260" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#4F46E5">3 Ester links joining glycerol backbone to 3 fatty acid chains</text>
+
+                <text x="530" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="600" fill="#52525B">+</text>
+                <rect x="570" y="35" width="220" height="120" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="1.8"/>
+                <text x="680" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#0D9488">3 NaOH (aq)</text>
+                <text x="680" y="112" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#115E59">Boiled under reflux</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 1: Edible Fat or Oil Is a Triester (3 Ester Links)</div>
+              A triglyceride molecule consists of a 3-carbon glycerol backbone bonded via <strong>three ester links (–COO–)</strong> to three long-chain fatty acid groups (such as stearic acid, C₁₇H₃₅COOH).`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="40" y="20" width="740" height="150" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.8"/>
+                <text x="410" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#92400E">Alkaline Hydrolysis Cleaves All 3 Ester Links Irreversibly</text>
+                <text x="410" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="600" fill="#18181B">
+                  Each — O <tspan fill="#DC2626">|</tspan> C(=O) — R  +  Na⁺OH⁻  &rarr;  — OH (on glycerol)  +  R — COO⁻Na⁺ (soap)
+                </text>
+                <text x="410" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#92400E">3 moles of NaOH break the 3 ester links in 1 mole of triglyceride</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 2: 3 Ester Links Are Broken by Hydrolysis + Neutralisation</div>
+              The hydroxide ions (OH⁻) attack and cleave all three ester links, restoring the three –OH groups onto the glycerol backbone and neutralising the three fatty acids into sodium carboxylate salts.`
+          },
+          {
+            svg: `
+              <svg viewBox="0 0 820 190" width="100%" height="auto">
+                <rect x="20" y="20" width="330" height="150" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="2"/>
+                <text x="185" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="13" fill="#115E59">1 Mole of Glycerol</text>
+                <text x="185" y="65" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0D9488">(Propane-1,2,3-triol)</text>
+                <text x="185" y="102" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" fill="#18181B">HO–CH₂–CH(OH)–CH₂–OH</text>
+                <text x="185" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#115E59">Trihydric alcohol (3 –OH groups)</text>
+
+                <text x="382" y="100" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="600" fill="#52525B">+</text>
+
+                <rect x="415" y="20" width="385" height="150" rx="8" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2"/>
+                <text x="607" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="13" fill="#3730A3">3 Moles of Soap (Sodium Salt of Fatty Acid)</text>
+                <text x="607" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="17" font-weight="600" fill="#18181B">3  C₁₇H₃₅ — <tspan fill="#4F46E5">COO⁻ Na⁺</tspan></text>
+                <text x="607" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3730A3">Hydrophobic tail (C₁₇H₃₅–) + Hydrophilic head (–COO⁻)</text>
+              </svg>
+            `,
+            explanation: `<div class="callout-title">Step 3: 1 Mole Glycerol + 3 Moles Soap Produced</div>
+              Always remember the <strong>1 : 3 mole ratio</strong>! Hydrolysing 1 mole of fat or oil yields <strong>1 mole of glycerol (propane-1,2,3-triol)</strong> and <strong>3 moles of soap</strong>.`
+          }
+        ]
+      }
+    };
+
+    let currentProcessKey = 'esterification';
+    let currentStepIdx = 0;
+
+    function renderAnimator() {
+      const proc = ANIM_PROCESSES[currentProcessKey];
+      const stepObj = proc.steps[currentStepIdx];
+
+      const badgeEl = document.getElementById('anim-badge');
+      badgeEl.className = `badge ${proc.badgeClass}`;
+      badgeEl.textContent = proc.badge;
+
+      document.getElementById('anim-title').textContent = proc.title;
+      document.getElementById('anim-step-indicator').textContent = `Step ${currentStepIdx + 1} of 3`;
+      document.getElementById('anim-svg-container').innerHTML = stepObj.svg;
+      document.getElementById('anim-explanation').innerHTML = stepObj.explanation;
+
+      document.querySelectorAll('.anim-step-btn').forEach((btn, idx) => {
+        btn.classList.toggle('btn-primary', idx === currentStepIdx);
+      });
+
+      document.getElementById('anim-prev-btn').disabled = currentStepIdx === 0;
+      document.getElementById('anim-next-btn').disabled = currentStepIdx === 2;
+    }
+
+    document.querySelectorAll('#anim-process-tabs .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#anim-process-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentProcessKey = btn.getAttribute('data-process');
+        currentStepIdx = 0;
+        renderAnimator();
+      });
+    });
+
+    document.querySelectorAll('.anim-step-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentStepIdx = parseInt(btn.getAttribute('data-step'), 10);
+        renderAnimator();
+      });
+    });
+
+    document.getElementById('anim-prev-btn').addEventListener('click', () => {
+      if (currentStepIdx > 0) {
+        currentStepIdx--;
+        renderAnimator();
+      }
+    });
+
+    document.getElementById('anim-next-btn').addEventListener('click', () => {
+      if (currentStepIdx < 2) {
+        currentStepIdx++;
+        renderAnimator();
+      }
+    });
+
+    renderAnimator();
+
+    // =========================================================================
+    // 2. O:H Ratio Calculator
+    // =========================================================================
+    const OH_DATA = {
+      ethanol_ethanal: {
+        reactant: 'Ethanol (CH₃CH₂OH)',
+        rFormula: 'C₂H₆O',
+        rRatio: '1 : 6 (0.167)',
+        product: 'Ethanal (CH₃CHO)',
+        pFormula: 'C₂H₄O',
+        pRatio: '1 : 4 (0.250)',
+        type: 'OXIDATION',
+        badgeClass: 'badge-carbonyl',
+        reason: '2 hydrogen atoms are removed from ethanol, so the O:H ratio increases from 1:6 (0.167) to 1:4 (0.250).'
+      },
+      ethanal_ethanoic: {
+        reactant: 'Ethanal (CH₃CHO)',
+        rFormula: 'C₂H₄O',
+        rRatio: '1 : 4 (0.250)',
+        product: 'Ethanoic Acid (CH₃COOH)',
+        pFormula: 'C₂H₄O₂',
+        pRatio: '2 : 4 = 1 : 2 (0.500)',
+        type: 'OXIDATION',
+        badgeClass: 'badge-carbonyl',
+        reason: '1 oxygen atom is added to ethanal, so the O:H ratio increases from 1:4 (0.250) to 2:4 (0.500).'
+      },
+      propan2ol_propanone: {
+        reactant: 'Propan-2-ol (CH₃CH(OH)CH₃)',
+        rFormula: 'C₃H₈O',
+        rRatio: '1 : 8 (0.125)',
+        product: 'Propanone (CH₃COCH₃)',
+        pFormula: 'C₃H₆O',
+        pRatio: '1 : 6 (0.167)',
+        type: 'OXIDATION',
+        badgeClass: 'badge-carbonyl',
+        reason: '2 hydrogen atoms are removed from the secondary alcohol propan-2-ol to form the ketone propanone, increasing the O:H ratio from 1:8 to 1:6.'
+      },
+      propanoic_propanol: {
+        reactant: 'Propanoic Acid (CH₃CH₂COOH)',
+        rFormula: 'C₃H₆O₂',
+        rRatio: '2 : 6 = 1 : 3 (0.333)',
+        product: 'Propan-1-ol (CH₃CH₂CH₂OH)',
+        pFormula: 'C₃H₈O',
+        pRatio: '1 : 8 (0.125)',
+        type: 'REDUCTION',
+        badgeClass: 'badge-hydroxyl',
+        reason: 'Converting a carboxylic acid back to a primary alcohol loses 1 oxygen atom and gains 2 hydrogen atoms, decreasing the O:H ratio from 1:3 (0.333) to 1:8 (0.125).'
+      },
+      menthol_menthone: {
+        reactant: 'Menthol (Cyclic 2° Alcohol)',
+        rFormula: 'C₁₀H₂₀O',
+        rRatio: '1 : 20 (0.050)',
+        product: 'Menthone (Cyclic Ketone)',
+        pFormula: 'C₁₀H₁₈O',
+        pRatio: '1 : 18 (0.056)',
+        type: 'OXIDATION',
+        badgeClass: 'badge-carbonyl',
+        reason: 'In peppermint essential oil, menthol loses 2H atoms to form the ketone menthone, increasing the O:H ratio from 1:20 to 1:18.'
+      }
+    };
+
+    function renderOHCalc(key) {
+      const d = OH_DATA[key];
+      document.getElementById('oh-calc-display').innerHTML = `
+        <div class="grid-3" style="align-items: center;">
+          <div>
+            <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">REACTANT</span>
+            <h4 style="font-size: 1.05rem;">${d.reactant}</h4>
+            <p style="font-family: var(--font-mono); font-size: 0.9rem; margin-top: 0.25rem;">Formula: <strong>${d.rFormula}</strong><br>O:H Ratio = <strong>${d.rRatio}</strong></p>
+          </div>
+          <div>
+            <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">PRODUCT</span>
+            <h4 style="font-size: 1.05rem;">${d.product}</h4>
+            <p style="font-family: var(--font-mono); font-size: 0.9rem; margin-top: 0.25rem;">Formula: <strong>${d.pFormula}</strong><br>O:H Ratio = <strong>${d.pRatio}</strong></p>
+          </div>
+          <div>
+            <span class="badge ${d.badgeClass}" style="font-size: 0.85rem;">${d.type}</span>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.45rem;">${d.reason}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    document.querySelectorAll('#oh-calc-buttons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#oh-calc-buttons .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderOHCalc(btn.getAttribute('data-oh'));
+      });
+    });
+    renderOHCalc('ethanol_ethanal');
+
+    // =========================================================================
+    // 3. Interactive Ester Builder & Namer
+    // =========================================================================
+    const ALCOHOLS = {
+      methanol: { name: 'Methanol', prefix: 'Methyl', chain: 'CH₃' },
+      ethanol: { name: 'Ethanol', prefix: 'Ethyl', chain: 'CH₂CH₃' },
+      propanol: { name: 'Propan-1-ol', prefix: 'Propyl', chain: 'CH₂CH₂CH₃' },
+      butanol: { name: 'Butan-1-ol', prefix: 'Butyl', chain: 'CH₂CH₂CH₂CH₃' },
+      pentanol: { name: 'Pentan-1-ol', prefix: 'Pentyl', chain: 'C₅H₁₁' }
+    };
+
+    const ACIDS = {
+      methanoic: { name: 'Methanoic acid', suffix: 'methanoate', salt: 'Sodium methanoate', chain: 'H' },
+      ethanoic: { name: 'Ethanoic acid', suffix: 'ethanoate', salt: 'Sodium ethanoate', chain: 'CH₃' },
+      propanoic: { name: 'Propanoic acid', suffix: 'propanoate', salt: 'Sodium propanoate', chain: 'CH₃CH₂' },
+      butanoic: { name: 'Butanoic acid', suffix: 'butanoate', salt: 'Sodium butanoate', chain: 'CH₃CH₂CH₂' }
+    };
+
+    function updateEsterBuilder() {
+      const alcKey = document.getElementById('ester-alcohol-select').value;
+      const acidKey = document.getElementById('ester-acid-select').value;
+      const alc = ALCOHOLS[alcKey];
+      const acid = ACIDS[acidKey];
+
+      const esterName = `${alc.prefix} ${acid.suffix}`;
+      const formula = `${acid.chain} — C(=O) — O — ${alc.chain}`;
+
+      document.getElementById('ester-builder-output').innerHTML = `
+        <div style="margin-bottom: 0.75rem;">
+          <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">SYSTEMATIC ESTER NAME</span>
+          <h4 style="font-size: 1.35rem; color: var(--fg-ester);">${esterName}</h4>
+        </div>
+        <div style="margin-bottom: 0.75rem;">
+          <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">SHORTENED STRUCTURAL FORMULA</span>
+          <p style="font-family: var(--font-mono); font-size: 1.05rem; font-weight: 600; background: var(--bg-card); padding: 0.55rem 0.8rem; border-radius: 6px; border: 1px solid var(--border-subtle); margin-top: 0.25rem;">
+            <span style="color: var(--fg-carboxyl);">${acid.chain}–C(=O)</span>–<span style="color: var(--fg-hydroxyl);">O–${alc.chain}</span>
+          </p>
+        </div>
+        <div style="font-size: 0.86rem; color: var(--text-secondary);">
+          &bull; <strong>Acid Hydrolysis (+H₂O, H⁺):</strong> Reversible &rarr; <strong>${acid.name}</strong> + <strong>${alc.name}</strong><br>
+          &bull; <strong>Alkaline Hydrolysis (+NaOH):</strong> Irreversible &rarr; <strong>${acid.salt}</strong> + <strong>${alc.name}</strong>
+        </div>
+      `;
+    }
+
+    document.getElementById('ester-alcohol-select').addEventListener('change', updateEsterBuilder);
+    document.getElementById('ester-acid-select').addEventListener('change', updateEsterBuilder);
+    updateEsterBuilder();
+  </script>
+</body>
+</html>

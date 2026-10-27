@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Quiz &amp; Lab Simulator — SQA Higher Chemistry Organic Reactions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">C=O</div>
+        <div class="brand-text">
+          <span class="brand-title">Higher Chemistry</span>
+          <span class="brand-subtitle">SQA Nature's Chemistry</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">1. Revision Plan &amp; Map</a></li>
+          <li><a href="reactions.html" class="nav-link">2. Visual Reactions</a></li>
+          <li><a href="flashcards.html" class="nav-link">3. Flashcards</a></li>
+          <li><a href="quiz.html" class="nav-link active">4. Practice Quiz &amp; Lab</a></li>
+          <li><a href="resources.html" class="nav-link">5. Videos &amp; Resources</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-progress" title="Overall Revision Mastery">
+        <span>Mastery</span>
+        <div class="progress-mini-bar">
+          <div class="progress-mini-fill" id="global-progress-fill"></div>
+        </div>
+        <strong id="global-progress-pct">0%</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="eyebrow">Active Assessment &bull; 4 Practice Modes</div>
+      <h1 class="page-title">SQA Practice Quiz &amp; Chemical Tests Simulator</h1>
+      <p class="page-lead">
+        Test your understanding across four assessment formats: an interactive test-tube laboratory simulator,
+        12 Paper 1 multiple-choice questions, reaction pathway completion challenges, and 3-mark SQA open-ended questions.
+      </p>
+
+      <div class="filter-bar" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <a href="#lab-simulator" class="filter-btn active">1. Interactive Test-Tube Lab Simulator</a>
+        <a href="#mcq-section" class="filter-btn">2. Multiple Choice (12 Questions)</a>
+        <a href="#pathway-builder" class="filter-btn">3. Reaction Pathway Challenges</a>
+        <a href="#open-ended" class="filter-btn">4. SQA 3-Mark Open-Ended Questions</a>
+      </div>
+    </section>
+
+    <!-- Mode 1: Interactive Test-Tube Colour Change Simulator -->
+    <section class="section" id="lab-simulator">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-carbonyl">Mode 1 &bull; Virtual Wet Lab</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Distinguishing Organic Compounds: Test-Tube Simulator</h2>
+        </div>
+        <span class="section-subtitle">Visualise SQA Colour Changes</span>
+      </div>
+
+      <div class="card">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <p class="card-body" style="margin-bottom: 1rem;">
+              Select an organic sample and a laboratory reagent below to observe the initial appearance, final appearance after warming, and the chemical explanation:
+            </p>
+
+            <div style="margin-bottom: 1rem;">
+              <label for="sim-compound" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); font-weight: 600; margin-bottom: 0.3rem;">1. SELECT ORGANIC COMPOUND</label>
+              <select id="sim-compound" style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); font-family: var(--font-sans);">
+                <option value="propan1ol">Propan-1-ol (Primary 1° Alcohol)</option>
+                <option value="propan2ol">Propan-2-ol (Secondary 2° Alcohol)</option>
+                <option value="methylpropan2ol">2-methylpropan-2-ol (Tertiary 3° Alcohol)</option>
+                <option value="propanal" selected>Propanal (Aldehyde, –CHO)</option>
+                <option value="propanone">Propanone (Ketone, –CO–)</option>
+                <option value="hexene">Hex-1-ene (Unsaturated Alkene, C=C)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <label for="sim-reagent" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); font-weight: 600; margin-bottom: 0.3rem;">2. SELECT CHEMICAL TEST REAGENT</label>
+              <select id="sim-reagent" style="width: 100%; padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); font-family: var(--font-sans);">
+                <option value="dichromate">Acidified Potassium Dichromate (K₂Cr₂O₇ / H⁺)</option>
+                <option value="fehlings" selected>Fehling's (or Benedict's) Solution</option>
+                <option value="tollens">Tollens' Reagent (Ammoniacal AgNO₃)</option>
+                <option value="bromine">Bromine Solution (Br₂(aq))</option>
+              </select>
+            </div>
+
+            <div id="sim-explanation-box" class="callout" style="margin-top: 0;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Visual SVG Test Tubes (Before & After) -->
+          <div class="structure-stage" style="background: #FCFBF9; margin: 0;">
+            <svg viewBox="0 0 380 245" width="100%" height="auto" id="sim-tubes-svg" aria-label="Before and after test tubes">
+              <!-- Populated dynamically by JS -->
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mode 2: 12 Multiple Choice Questions -->
+    <section class="section" id="mcq-section">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-ester">Mode 2 &bull; Paper 1 Multiple Choice</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">12 SQA Exam-Style Multiple Choice Questions</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="badge badge-alkene" style="font-size: 0.85rem;">Score: <strong id="mcq-score-display">0 / 12</strong></span>
+          <button type="button" class="btn btn-sm" id="reset-mcq-btn">Reset Quiz</button>
+        </div>
+      </div>
+
+      <div id="mcq-container" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Mode 3: Interactive Reaction Pathway Completion Challenges -->
+    <section class="section" id="pathway-builder">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-hydroxyl">Mode 3 &bull; Synthesis &amp; Reagent Identification</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">Multi-Step Reaction Pathway Challenges</h2>
+        </div>
+        <span class="section-subtitle">Select the missing species</span>
+      </div>
+
+      <div class="grid-2">
+        <!-- Challenge 1 -->
+        <div class="card">
+          <div class="card-title">
+            <span>Pathway A: From Alkene to Ketone</span>
+            <span class="badge badge-alkene">3-Step Synthesis</span>
+          </div>
+          <p class="card-body" style="margin-bottom: 1rem;">
+            Propene reacts with steam (H₂O) over an acid catalyst to form a <strong>major</strong> alcohol product <strong>X</strong>, which is then heated with black copper(II) oxide (CuO) to form compound <strong>Y</strong>.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div>
+              <label style="font-size: 0.8rem; font-family: var(--font-mono);">1. Identity of Major Alcohol X:</label>
+              <select class="pathway-select" data-ans="propan-2-ol" style="width: 100%; padding: 0.5rem; margin-top: 0.2rem; border-radius: 6px; border: 1px solid var(--border-strong);">
+                <option value="">-- Choose Alcohol X --</option>
+                <option value="propan-1-ol">Propan-1-ol (1° alcohol)</option>
+                <option value="propan-2-ol">Propan-2-ol (2° alcohol)</option>
+                <option value="propanoic">Propanoic acid</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-family: var(--font-mono);">2. Identity of Oxidation Product Y:</label>
+              <select class="pathway-select" data-ans="propanone" style="width: 100%; padding: 0.5rem; margin-top: 0.2rem; border-radius: 6px; border: 1px solid var(--border-strong);">
+                <option value="">-- Choose Compound Y --</option>
+                <option value="propanal">Propanal (Aldehyde)</option>
+                <option value="propanone">Propanone (Ketone)</option>
+                <option value="propanoic">Propanoic acid</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-family: var(--font-mono);">3. Observation when Y is warmed with Fehling's solution:</label>
+              <select class="pathway-select" data-ans="stays-blue" style="width: 100%; padding: 0.5rem; margin-top: 0.2rem; border-radius: 6px; border: 1px solid var(--border-strong);">
+                <option value="">-- Choose Observation --</option>
+                <option value="brick-red">Turns from blue to brick-red precipitate</option>
+                <option value="stays-blue">No reaction — remains blue solution</option>
+                <option value="silver">Forms a silver mirror</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-sm btn-primary check-pathway-btn" style="align-self: flex-start;">Check Pathway A</button>
+            <div class="quiz-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Challenge 2 -->
+        <div class="card">
+          <div class="card-title">
+            <span>Pathway B: Ester Hydrolysis &amp; Oxidation</span>
+            <span class="badge badge-ester">Structure Deduction</span>
+          </div>
+          <p class="card-body" style="margin-bottom: 1rem;">
+            An ester with formula <span class="chem-formula">CH₃CH₂COOCH₂CH₃</span> undergoes acid-catalysed hydrolysis to form carboxylic acid <strong>A</strong> and alcohol <strong>B</strong>.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div>
+              <label style="font-size: 0.8rem; font-family: var(--font-mono);">1. Systematic name of the starting ester:</label>
+              <select class="pathway-select" data-ans="ethyl-propanoate" style="width: 100%; padding: 0.5rem; margin-top: 0.2rem; border-radius: 6px; border: 1px solid var(--border-strong);">
+                <option value="">-- Choose Ester Name --</option>
+                <option value="propyl-ethanoate">Propyl ethanoate</option>
+                <option value="ethyl-propanoate">Ethyl propanoate</option>
+                <option value="methyl-butanoate">Methyl butanoate</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-family: var(--font-mono);">2. Identity of Carboxylic Acid A:</label>
+              <select class="pathway-select" data-ans="propanoic-acid" style="width: 100%; padding: 0.5rem; margin-top: 0.2rem; border-radius: 6px; border: 1px solid var(--border-strong);">
+                <option value="">-- Choose Acid A --</option>
+                <option value="ethanoic-acid">Ethanoic acid (CH₃COOH)</option>
+                <option value="propanoic-acid">Propanoic acid (CH₃CH₂COOH)</option>
+                <option value="butanoic-acid">Butanoic acid (C₃H₇COOH)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-family: var(--font-mono);">3. Product formed if Alcohol B is fully oxidised under reflux:</label>
+              <select class="pathway-select" data-ans="ethanoic-acid" style="width: 100%; padding: 0.5rem; margin-top: 0.2rem; border-radius: 6px; border: 1px solid var(--border-strong);">
+                <option value="">-- Choose Oxidation Product of B --</option>
+                <option value="ethanal">Ethanal</option>
+                <option value="ethanoic-acid">Ethanoic acid</option>
+                <option value="propanone">Propanone</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-sm btn-primary check-pathway-btn" style="align-self: flex-start;">Check Pathway B</button>
+            <div class="quiz-feedback"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mode 4: SQA Paper 2 Structured & 3-Mark Open-Ended Questions -->
+    <section class="section" id="open-ended">
+      <div class="section-header">
+        <div>
+          <span class="badge badge-amide">Mode 4 &bull; Paper 2 Extended Response</span>
+          <h2 class="section-title" style="margin-top: 0.3rem;">SQA 3-Mark Open-Ended &amp; Explanation Questions</h2>
+        </div>
+        <span class="section-subtitle">Draft your response, then compare with SQA Marking Instructions</span>
+      </div>
+
+      <div class="grid-2">
+        <!-- Open-Ended Question 1 -->
+        <div class="card">
+          <div class="card-title">
+            <span>Open-Ended Q1: Identifying C₃H₆O Isomers</span>
+            <span class="badge badge-carbonyl">3 Marks</span>
+          </div>
+          <p class="card-body" style="margin-bottom: 0.85rem;">
+            <em>"A student finds three unlabelled bottles in a chemistry prep room. Each bottle contains a colourless liquid with the molecular formula <strong>C₃H₆O</strong>. The three liquids are known to be <strong>propanal</strong>, <strong>propanone</strong>, and <strong>prop-2-en-1-ol (CH₂=CHCH₂OH)</strong>. Using your knowledge of chemistry, comment on how the student could positively identify all three liquids."</em>
+          </p>
+          <textarea rows="5" placeholder="Type your 3-mark answer here (mention functional groups, reagents, and exact colour changes)..." style="width: 100%; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); font-family: var(--font-sans); font-size: 0.9rem; margin-bottom: 0.75rem;"></textarea>
+          <button type="button" class="btn btn-sm toggle-scheme-btn">Reveal SQA 3-Mark Model Answer</button>
+          <div class="quiz-feedback" style="margin-top: 0.75rem;">
+            <strong>SQA 3-Mark Model Answer Rubric:</strong><br>
+            1. <strong>Functional Group Identification:</strong> Propanal has an aldehyde (–CHO) group; propanone has a ketone (–CO–) group; prop-2-en-1-ol has both an alkene (C=C) double bond and a primary alcohol (–OH) group.<br>
+            2. <strong>Test 1 (Bromine Solution):</strong> Shake a sample of each with orange/brown <strong>bromine solution (Br₂(aq))</strong>. Only <strong>prop-2-en-1-ol</strong> contains a C=C double bond and will rapidly <strong>decolourise the bromine solution</strong> via an addition reaction.<br>
+            3. <strong>Test 2 (Tollens’ or Fehling’s):</strong> Warm the remaining two liquids in a hot water bath with <strong>Tollens’ reagent</strong> (or <strong>Fehling’s solution</strong>). <strong>Propanal</strong> (the aldehyde) is oxidised to propanoic acid and forms a <strong>silver mirror</strong> (or a <strong>brick-red precipitate</strong> with Fehling’s), whereas <strong>propanone</strong> (the ketone) resists oxidation and gives no change.
+          </div>
+        </div>
+
+        <!-- Open-Ended Question 2 -->
+        <div class="card">
+          <div class="card-title">
+            <span>Open-Ended Q2: Fats, Oils, Soaps &amp; Detergents</span>
+            <span class="badge badge-ester">3 Marks</span>
+          </div>
+          <p class="card-body" style="margin-bottom: 0.85rem;">
+            <em>"Butter, olive oil, and dishwashing liquid all interact differently with water and heat. Using your knowledge of chemistry, explain the relationship between the chemical structures of fats, oils, and soaps/detergents and their physical properties and everyday uses."</em>
+          </p>
+          <textarea rows="5" placeholder="Type your 3-mark answer here (compare saturation, chain packing, LDFs, saponification, and micelles)..." style="width: 100%; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); font-family: var(--font-sans); font-size: 0.9rem; margin-bottom: 0.75rem;"></textarea>
+          <button type="button" class="btn btn-sm toggle-scheme-btn">Reveal SQA 3-Mark Model Answer</button>
+          <div class="quiz-feedback" style="margin-top: 0.75rem;">
+            <strong>SQA 3-Mark Model Answer Rubric:</strong><br>
+            1. <strong>Triester Structure &amp; Melting Point:</strong> Butter (fat) and olive oil (oil) are both <strong>triesters (triglycerides)</strong> formed from <strong>glycerol (propane-1,2,3-triol)</strong> and three fatty acids. Olive oil has a higher degree of <strong>unsaturation (C=C double bonds)</strong>, causing bends/kinks in the chains that prevent close packing, resulting in <strong>weaker London dispersion forces</strong> and a lower melting point (liquid at room temp) than saturated butter fat.<br>
+            2. <strong>Soap &amp; Detergent Structure:</strong> Alkaline hydrolysis of fats/oils with NaOH produces soap. Soaps and dishwashing detergents have a <strong>long non-polar hydrophobic hydrocarbon tail</strong> (dissolves in non-polar grease/oil) and an <strong>ionic hydrophilic head</strong> (dissolves in polar water).<br>
+            3. <strong>Micelles &amp; Hard Water:</strong> Agitation forms negatively charged spherical <strong>micelles</strong> that repel each other, suspending grease in water as an emulsion. Dishwashing liquid uses <strong>soapless detergents</strong> so it does not form insoluble <strong>scum</strong> with Ca²⁺/Mg²⁺ ions in hard water.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>SQA Higher Chemistry — Assessment &amp; Virtual Lab</strong><br>
+        Need video explanations or past papers? Visit the Resources page.
+      </div>
+      <div>
+        <a href="resources.html" class="btn btn-sm btn-primary">Explore Videos &amp; Past Papers &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // =========================================================================
+    // Mode 1: Interactive Test-Tube Colour Simulator
+    // =========================================================================
+    const SIM_RESULTS = {
+      dichromate: {
+        reagentName: 'Acidified K₂Cr₂O₇(aq)',
+        initColor: '#EA580C',
+        initLabel: 'Orange Solution',
+        reactions: {
+          propan1ol: {
+            reacts: true,
+            finalColor: '#0F766E',
+            finalLabel: 'Green Solution (Cr³⁺)',
+            product: 'Propanal (distillation) → Propanoic acid (reflux)',
+            text: '<strong>POSITIVE REACTION:</strong> Propan-1-ol is a <strong>primary (1°) alcohol</strong>. It is oxidised to propanal and then propanoic acid, reducing orange dichromate ions (Cr₂O₇²⁻) to green chromium(III) ions (Cr³⁺).'
+          },
+          propan2ol: {
+            reacts: true,
+            finalColor: '#0F766E',
+            finalLabel: 'Green Solution (Cr³⁺)',
+            product: 'Propanone (Ketone)',
+            text: '<strong>POSITIVE REACTION:</strong> Propan-2-ol is a <strong>secondary (2°) alcohol</strong>. It is oxidised to the ketone <strong>propanone</strong>, turning the orange dichromate solution green.'
+          },
+          methylpropan2ol: {
+            reacts: false,
+            finalColor: '#EA580C',
+            finalLabel: 'Remains Orange',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> 2-methylpropan-2-ol is a <strong>tertiary (3°) alcohol</strong> with no C–H bond on the C–OH carbon. It cannot be oxidised by acidified dichromate, so the solution remains orange.'
+          },
+          propanal: {
+            reacts: true,
+            finalColor: '#0F766E',
+            finalLabel: 'Green Solution (Cr³⁺)',
+            product: 'Propanoic acid',
+            text: '<strong>POSITIVE REACTION:</strong> Propanal is an <strong>aldehyde (–CHO)</strong> and is oxidised to propanoic acid (–COOH), turning the orange dichromate solution green.'
+          },
+          propanone: {
+            reacts: false,
+            finalColor: '#EA580C',
+            finalLabel: 'Remains Orange',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> Propanone is a <strong>ketone (–CO–)</strong> and resists further oxidation. The acidified dichromate solution remains orange.'
+          },
+          hexene: {
+            reacts: false,
+            finalColor: '#EA580C',
+            finalLabel: 'Remains Orange',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> Acidified dichromate tests for oxidisable alcohols/aldehydes, not alkenes. Use bromine solution (Br₂) to test for unsaturation.'
+          }
+        }
+      },
+      fehlings: {
+        reagentName: "Fehling's Solution",
+        initColor: '#1D4ED8',
+        initLabel: 'Deep Blue Solution (Cu²⁺)',
+        reactions: {
+          propan1ol: {
+            reacts: false,
+            finalColor: '#1D4ED8',
+            finalLabel: 'Remains Blue',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Fehling's solution is a very mild oxidising agent that only oxidises <strong>aldehydes</strong>, not alcohols."
+          },
+          propan2ol: {
+            reacts: false,
+            finalColor: '#1D4ED8',
+            finalLabel: 'Remains Blue',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Fehling's solution does not oxidise secondary alcohols."
+          },
+          methylpropan2ol: {
+            reacts: false,
+            finalColor: '#1D4ED8',
+            finalLabel: 'Remains Blue',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Tertiary alcohols are not oxidised."
+          },
+          propanal: {
+            reacts: true,
+            finalColor: '#B91C1C',
+            finalLabel: 'Brick-Red Precipitate (Cu₂O)',
+            product: 'Propanoic acid / Propanoate',
+            text: "<strong>POSITIVE REACTION:</strong> Propanal is an <strong>aldehyde</strong>. Warming with Fehling's solution oxidises propanal while reducing blue Cu²⁺(aq) ions to a <strong>brick-red / orange-red precipitate of copper(I) oxide (Cu₂O)</strong>."
+          },
+          propanone: {
+            reacts: false,
+            finalColor: '#1D4ED8',
+            finalLabel: 'Remains Blue',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Propanone is a <strong>ketone</strong> and cannot be oxidised by Fehling's solution. The solution stays blue—distinguishing it from propanal."
+          },
+          hexene: {
+            reacts: false,
+            finalColor: '#1D4ED8',
+            finalLabel: 'Remains Blue',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Alkenes do not react with Fehling's solution."
+          }
+        }
+      },
+      tollens: {
+        reagentName: "Tollens' Reagent",
+        initColor: '#E4E4E7',
+        initLabel: 'Colourless Solution (Ag⁺)',
+        reactions: {
+          propan1ol: {
+            reacts: false,
+            finalColor: '#E4E4E7',
+            finalLabel: 'Remains Colourless',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Tollens' reagent specifically oxidises <strong>aldehydes</strong>, not primary alcohols."
+          },
+          propan2ol: {
+            reacts: false,
+            finalColor: '#E4E4E7',
+            finalLabel: 'Remains Colourless',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Tollens' reagent does not oxidise secondary alcohols."
+          },
+          methylpropan2ol: {
+            reacts: false,
+            finalColor: '#E4E4E7',
+            finalLabel: 'Remains Colourless',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Tertiary alcohols resist oxidation."
+          },
+          propanal: {
+            reacts: true,
+            finalColor: '#9CA3AF',
+            finalLabel: 'Silver Mirror (Ag(s) coat)',
+            product: 'Propanoic acid / Propanoate',
+            text: "<strong>POSITIVE REACTION:</strong> Propanal is an <strong>aldehyde</strong>. It reduces colourless Ag⁺(aq) ions in Tollens' reagent to metallic silver (<strong>Ag⁺ + e⁻ → Ag(s)</strong>), coating the inside of the test tube with a <strong>silver mirror</strong>."
+          },
+          propanone: {
+            reacts: false,
+            finalColor: '#E4E4E7',
+            finalLabel: 'Remains Colourless',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Propanone is a <strong>ketone</strong> and cannot be oxidised by Tollens' reagent. No silver mirror forms."
+          },
+          hexene: {
+            reacts: false,
+            finalColor: '#E4E4E7',
+            finalLabel: 'Remains Colourless',
+            product: 'No Reaction',
+            text: "<strong>NO REACTION:</strong> Alkenes do not react with Tollens' reagent."
+          }
+        }
+      },
+      bromine: {
+        reagentName: 'Bromine Solution Br₂(aq)',
+        initColor: '#D97706',
+        initLabel: 'Orange/Brown Br₂(aq)',
+        reactions: {
+          propan1ol: {
+            reacts: false,
+            finalColor: '#D97706',
+            finalLabel: 'Remains Orange/Brown',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> Propan-1-ol is saturated (contains no C=C double bonds), so it does not decolourise bromine solution.'
+          },
+          propan2ol: {
+            reacts: false,
+            finalColor: '#D97706',
+            finalLabel: 'Remains Orange/Brown',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> Propan-2-ol is saturated and does not decolourise bromine solution.'
+          },
+          methylpropan2ol: {
+            reacts: false,
+            finalColor: '#D97706',
+            finalLabel: 'Remains Orange/Brown',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> 2-methylpropan-2-ol is saturated.'
+          },
+          propanal: {
+            reacts: false,
+            finalColor: '#D97706',
+            finalLabel: 'Remains Orange/Brown',
+            product: 'No Reaction (Test for C=C)',
+            text: '<strong>NO ADDITION REACTION:</strong> Propanal contains a C=O carbonyl bond, not an alkene C=C bond.'
+          },
+          propanone: {
+            reacts: false,
+            finalColor: '#D97706',
+            finalLabel: 'Remains Orange/Brown',
+            product: 'No Reaction',
+            text: '<strong>NO REACTION:</strong> Propanone contains no C=C double bonds.'
+          },
+          hexene: {
+            reacts: true,
+            finalColor: '#F4F4F5',
+            finalLabel: 'Colourless (1,2-dibromohexane)',
+            product: '1,2-dibromohexane',
+            text: '<strong>POSITIVE REACTION:</strong> Hex-1-ene is an <strong>unsaturated alkene (C=C)</strong>. It undergoes rapid <strong>addition (halogenation)</strong> with Br₂, immediately <strong>decolourising the orange/brown bromine solution to colourless</strong>.'
+          }
+        }
+      }
+    };
+
+    function updateSimulator() {
+      const compKey = document.getElementById('sim-compound').value;
+      const reagKey = document.getElementById('sim-reagent').value;
+      const reag = SIM_RESULTS[reagKey];
+      const res = reag.reactions[compKey];
+
+      document.getElementById('sim-explanation-box').innerHTML = `
+        <div class="callout-title">${res.reacts ? '✓ Positive Test Result' : '✕ No Reaction Observed'} &bull; Product: ${res.product}</div>
+        <div>${res.text}</div>
+      `;
+
+      const silverStroke = (reagKey === 'tollens' && res.reacts) ? '#52525B' : '#18181B';
+      const silverDash = (reagKey === 'tollens' && res.reacts) ? 'stroke-width="5"' : 'stroke-width="2"';
+
+      document.getElementById('sim-tubes-svg').innerHTML = `
+        <!-- Initial Tube -->
+        <g transform="translate(45, 20)">
+          <text x="55" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#52525B">BEFORE</text>
+          <path d="M 30 30 L 30 165 Q 30 190 55 190 Q 80 190 80 165 L 80 30" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+          <path d="M 32 85 L 78 85 L 78 165 Q 78 188 55 188 Q 32 188 32 165 Z" fill="${reag.initColor}" opacity="0.88"/>
+          <text x="55" y="212" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="600" fill="#18181B">${reag.initLabel}</text>
+        </g>
+
+        <!-- Arrow -->
+        <text x="190" y="115" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" font-weight="600" fill="#18181B">&rarr;</text>
+        <text x="190" y="135" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#52525B">${reagKey === 'bromine' ? 'Shake' : 'Warm'}</text>
+
+        <!-- Final Tube -->
+        <g transform="translate(225, 20)">
+          <text x="55" y="15" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="${res.reacts ? '#059669' : '#52525B'}">AFTER</text>
+          <path d="M 30 30 L 30 165 Q 30 190 55 190 Q 80 190 80 165 L 80 30" fill="#FFFFFF" stroke="${silverStroke}" ${silverDash}/>
+          <path d="M 32 85 L 78 85 L 78 165 Q 78 188 55 188 Q 32 188 32 165 Z" fill="${res.finalColor}" opacity="0.9"/>
+          <text x="55" y="212" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="600" fill="#18181B">${res.finalLabel}</text>
+        </g>
+      `;
+    }
+
+    document.getElementById('sim-compound').addEventListener('change', updateSimulator);
+    document.getElementById('sim-reagent').addEventListener('change', updateSimulator);
+    updateSimulator();
+
+    // =========================================================================
+    // Mode 2: 12 Multiple Choice Questions
+    // =========================================================================
+    const MCQS = [
+      {
+        id: 'q1',
+        topic: 'Alcohol Classification & Oxidation',
+        q: '1. Which of the following alcohols CANNOT be oxidised by acidified potassium dichromate solution?',
+        options: [
+          'A. Butan-1-ol',
+          'B. Butan-2-ol',
+          'C. 2-methylpropan-1-ol',
+          'D. 2-methylpropan-2-ol'
+        ],
+        correct: 3,
+        exp: '<strong>D is correct.</strong> 2-methylpropan-2-ol is a <strong>tertiary (3°) alcohol</strong> (the C–OH carbon is bonded to 3 methyl carbons and has no C–H bond). Butan-1-ol and 2-methylpropan-1-ol are 1° alcohols; butan-2-ol is a 2° alcohol.'
+      },
+      {
+        id: 'q2',
+        topic: 'O:H Ratio Calculation',
+        q: '2. During the conversion of ethanal (CH₃CHO) into ethanol (CH₃CH₂OH), what happens to the oxygen-to-hydrogen (O:H) ratio and what type of reaction occurs?',
+        options: [
+          'A. O:H ratio increases from 1:4 to 1:6; oxidation',
+          'B. O:H ratio decreases from 1:4 to 1:6; reduction',
+          'C. O:H ratio increases from 1:6 to 1:4; oxidation',
+          'D. O:H ratio decreases from 1:6 to 1:4; reduction'
+        ],
+        correct: 1,
+        exp: '<strong>B is correct.</strong> Ethanal is C₂H₄O (O:H = 1:4 = 0.25) and ethanol is C₂H₆O (O:H = 1:6 = 0.167). Because 1/6 is smaller than 1/4, the O:H ratio <strong>decreases</strong>, which is defined as <strong>reduction</strong>.'
+      },
+      {
+        id: 'q3',
+        topic: 'Structural Isomers',
+        q: '3. Which pair of organic compounds are structural isomers of each other?',
+        options: [
+          'A. Propanoic acid and Methyl ethanoate',
+          'B. Butanal and Butan-2-ol',
+          'C. Pentan-2-one and Pentanoic acid',
+          'D. Propan-1-ol and Propanone'
+        ],
+        correct: 0,
+        exp: '<strong>A is correct.</strong> Both propanoic acid (CH₃CH₂COOH) and methyl ethanoate (CH₃COOCH₃) share the exact same molecular formula: <strong>C₃H₆O₂</strong>.'
+      },
+      {
+        id: 'q4',
+        topic: 'Aldehyde vs Ketone Tests',
+        q: '4. A colourless liquid with molecular formula C₄H₈O forms a silver mirror when warmed with Tollens’ reagent. Which compound could the liquid be?',
+        options: [
+          'A. Butan-2-one',
+          'B. Butan-1-ol',
+          'C. Methylpropanal',
+          'D. Butanoic acid'
+        ],
+        correct: 2,
+        exp: '<strong>C is correct.</strong> Forming a silver mirror with Tollens’ reagent proves the compound is an <strong>aldehyde (–CHO)</strong>. Methylpropanal (C₄H₈O) is a branched aldehyde; butan-2-one is a ketone.'
+      },
+      {
+        id: 'q5',
+        topic: 'Ester Nomenclature',
+        q: '5. Name the ester with the shortened structural formula CH₃CH₂CH₂COOCH₃.',
+        options: [
+          'A. Propyl ethanoate',
+          'B. Methyl butanoate',
+          'C. Butyl methanoate',
+          'D. Methyl propanoate'
+        ],
+        correct: 1,
+        exp: '<strong>B is correct.</strong> The CH₃CH₂CH₂C(=O)– chain has 4 carbons including the C=O carbon, so it comes from <strong>butanoic acid</strong> (<em>butanoate</em>). The –OCH₃ group comes from <strong>methanol</strong> (<em>methyl</em>) → <strong>methyl butanoate</strong>.'
+      },
+      {
+        id: 'q6',
+        topic: 'Mandatory Ester Practical',
+        q: '6. In the laboratory synthesis of an ester, why is the reaction mixture poured into aqueous sodium hydrogencarbonate (NaHCO₃) at the end of heating?',
+        options: [
+          'A. To catalyse the reversible condensation reaction',
+          'B. To oxidise any unreacted primary alcohol',
+          'C. To neutralise the sulfuric acid catalyst and unreacted carboxylic acid',
+          'D. To hydrolyse the ester into a soap salt'
+        ],
+        correct: 2,
+        exp: '<strong>C is correct.</strong> Aqueous NaHCO₃ is a weak base that neutralises the excess carboxylic acid and conc. H₂SO₄ catalyst so the sweet/fruity smell and oily ester layer can be detected clearly.'
+      },
+      {
+        id: 'q7',
+        topic: 'Fats & Oils Stoichiometry',
+        q: '7. Complete alkaline hydrolysis of 1 mole of a triglyceride (fat or oil) using sodium hydroxide produces:',
+        options: [
+          'A. 1 mole of glycerol and 1 mole of soap',
+          'B. 3 moles of glycerol and 1 mole of soap',
+          'C. 1 mole of glycerol and 3 moles of soap',
+          'D. 3 moles of glycerol and 3 moles of soap'
+        ],
+        correct: 2,
+        exp: '<strong>C is correct.</strong> Every triglyceride molecule is a triester formed from <strong>1 molecule of glycerol</strong> (propane-1,2,3-triol) and <strong>3 fatty acid chains</strong>, so alkaline hydrolysis yields 1 mol glycerol + 3 mol soap.'
+      },
+      {
+        id: 'q8',
+        topic: 'Unsaturation & Melting Points',
+        q: '8. Compared to animal fats, vegetable oils are liquid at room temperature because oil molecules:',
+        options: [
+          'A. Have fewer C=C double bonds and stronger hydrogen bonding',
+          'B. Are more unsaturated, causing kinks that prevent close packing and weaken London dispersion forces',
+          'C. Have shorter carbon chains and form ionic bonds with water',
+          'D. Are formed from propan-1-ol instead of propane-1,2,3-triol'
+        ],
+        correct: 1,
+        exp: '<strong>B is correct.</strong> Higher unsaturation (more C=C double bonds) introduces bends/kinks in the hydrocarbon chains, preventing close packing and resulting in <strong>weaker London dispersion forces</strong>.'
+      },
+      {
+        id: 'q9',
+        topic: 'Emulsifiers in Food',
+        q: '9. Food emulsifiers (such as E471) are made by reacting edible oils with glycerol. Which part of an emulsifier molecule is hydrophilic (water-attracting)?',
+        options: [
+          'A. The long non-polar hydrocarbon fatty acid chains',
+          'B. The unreacted hydroxyl (–OH) groups attached to the glycerol backbone',
+          'C. The carbon-to-carbon double bonds (C=C)',
+          'D. The peptide (–CONH–) links'
+        ],
+        correct: 1,
+        exp: '<strong>B is correct.</strong> Emulsifiers are monoglycerides or diglycerides. Their unreacted polar <strong>hydroxyl (–OH) groups</strong> hydrogen-bond with water (hydrophilic head), while the fatty acid chains dissolve in oil (hydrophobic tail).'
+      },
+      {
+        id: 'q10',
+        topic: 'Proteins & Denaturation',
+        q: '10. When an enzyme protein is denatured by heating to 75 °C, what is the primary structural change that occurs?',
+        options: [
+          'A. Covalent peptide links (–CONH–) are hydrolysed into free amino acids',
+          'B. Intermolecular hydrogen bonds holding the 3D coiled shape are broken, changing the active site shape',
+          'C. Ester links between amino acid side chains are oxidised',
+          'D. Amino groups (–NH₂) are oxidised to carboxyl groups (–COOH)'
+        ],
+        correct: 1,
+        exp: '<strong>B is correct.</strong> Denaturation disrupts weak intermolecular <strong>hydrogen bonds</strong> (not covalent peptide links), causing the protein’s 3D shape and active site to unfold irreversibly.'
+      },
+      {
+        id: 'q11',
+        topic: 'Terpenes & Isoprene Units',
+        q: '11. Squalene is a linear terpene with the molecular formula C₃₀H₅₀. How many isoprene units (2-methylbuta-1,3-diene, C₅H₈) were joined to make one squalene molecule?',
+        options: [
+          'A. 3',
+          'B. 5',
+          'C. 6',
+          'D. 10'
+        ],
+        correct: 2,
+        exp: '<strong>C is correct.</strong> Each isoprene unit (C₅H₈) contains 5 carbon atoms. Dividing 30 carbons by 5 gives <strong>6 isoprene units</strong>.'
+      },
+      {
+        id: 'q12',
+        topic: 'Antioxidants in Food',
+        q: '12. Ascorbic acid (Vitamin C) is added to foods as an antioxidant. The ion-electron equation is: C₆H₈O₆ → C₆H₆O₆ + 2H⁺ + 2e⁻. In this reaction, ascorbic acid acts as:',
+        options: [
+          'A. An oxidising agent because it gains electrons',
+          'B. A reducing agent because it undergoes oxidation (loses electrons)',
+          'C. A catalyst for the hydrolysis of fats',
+          'D. An emulsifier that forms micelles around oxygen'
+        ],
+        correct: 1,
+        exp: '<strong>B is correct.</strong> Antioxidants are <strong>reducing agents</strong>: they easily undergo <strong>oxidation themselves</strong> (losing electrons and increasing their O:H ratio from 6:8 to 6:6) to protect food molecules from being oxidised.'
+      }
+    ];
+
+    function renderMCQs() {
+      const savedQuiz = getSavedState(STORAGE_KEYS.QUIZ_SCORE, {});
+      const container = document.getElementById('mcq-container');
+
+      container.innerHTML = MCQS.map((q) => {
+        return `
+          <div class="card" id="card-${q.id}">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+              <span class="badge badge-ester">${q.topic}</span>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);" id="status-${q.id}">
+                ${savedQuiz[q.id] ? 'Completed ✓' : '1 Mark'}
+              </span>
+            </div>
+            <p style="font-weight: 600; font-size: 1rem; margin-bottom: 1rem; color: var(--text-primary);">${q.q}</p>
+            <div class="options-list" data-qid="${q.id}">
+              ${q.options.map((opt, idx) => `
+                <button type="button" class="quiz-option" data-idx="${idx}">${opt}</button>
+              `).join('')}
+            </div>
+            <div class="quiz-feedback" id="fb-${q.id}">${q.exp}</div>
+          </div>
+        `;
+      }).join('');
+
+      updateMCQScoreDisplay();
+
+      container.querySelectorAll('.options-list').forEach(listEl => {
+        const qid = listEl.getAttribute('data-qid');
+        const qObj = MCQS.find(x => x.id === qid);
+        const buttons = listEl.querySelectorAll('.quiz-option');
+
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const chosenIdx = parseInt(btn.getAttribute('data-idx'), 10);
+            buttons.forEach(b => b.disabled = true);
+
+            if (chosenIdx === qObj.correct) {
+              btn.classList.add('correct');
+              const current = getSavedState(STORAGE_KEYS.QUIZ_SCORE, {});
+              current[qid] = true;
+              setSavedState(STORAGE_KEYS.QUIZ_SCORE, current);
+              document.getElementById(`status-${qid}`).textContent = 'Correct ✓';
+            } else {
+              btn.classList.add('incorrect');
+              buttons[qObj.correct].classList.add('correct');
+              document.getElementById(`status-${qid}`).textContent = 'Review Explanation';
+            }
+
+            document.getElementById(`fb-${qid}`).classList.add('visible');
+            updateMCQScoreDisplay();
+          });
+        });
+      });
+    }
+
+    function updateMCQScoreDisplay() {
+      const savedQuiz = getSavedState(STORAGE_KEYS.QUIZ_SCORE, {});
+      const score = Object.values(savedQuiz).filter(Boolean).length;
+      document.getElementById('mcq-score-display').textContent = `${score} / ${MCQS.length}`;
+    }
+
+    document.getElementById('reset-mcq-btn').addEventListener('click', () => {
+      setSavedState(STORAGE_KEYS.QUIZ_SCORE, {});
+      renderMCQs();
+    });
+
+    renderMCQs();
+
+    // =========================================================================
+    // Mode 3: Reaction Pathway Completion Checker
+    // =========================================================================
+    document.querySelectorAll('.check-pathway-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
+        const selects = card.querySelectorAll('.pathway-select');
+        const fb = card.querySelector('.quiz-feedback');
+        let correctCount = 0;
+
+        selects.forEach(sel => {
+          if (sel.value === sel.getAttribute('data-ans')) {
+            sel.style.borderColor = '#059669';
+            sel.style.backgroundColor = '#ECFDF5';
+            correctCount++;
+          } else {
+            sel.style.borderColor = '#DC2626';
+            sel.style.backgroundColor = '#FEF2F2';
+          }
+        });
+
+        fb.classList.add('visible');
+        if (correctCount === selects.length) {
+          fb.innerHTML = `<strong>✓ 3 / 3 Correct!</strong> Excellent multi-step synthesis reasoning.`;
+        } else {
+          fb.innerHTML = `<strong>${correctCount} / ${selects.length} Correct.</strong> Check the highlighted red dropdowns and try again!`;
+        }
+      });
+    });
+
+    // =========================================================================
+    // Mode 4: Open-Ended Marking Scheme Toggles
+    // =========================================================================
+    document.querySelectorAll('.toggle-scheme-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const fb = btn.nextElementSibling;
+        fb.classList.toggle('visible');
+        btn.textContent = fb.classList.contains('visible')
+          ? 'Hide SQA 3-Mark Model Answer'
+          : 'Reveal SQA 3-Mark Model Answer';
+      });
+    });
+  </script>
+</body>
+</html>

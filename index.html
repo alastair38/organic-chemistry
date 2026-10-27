@@ -1,0 +1,1894 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemistry — Organic Reactions Revision Plan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-mark">C=O</div>
+          <div class="brand-text">
+            <span class="brand-title">Chemistry</span>
+            <span class="brand-subtitle">Nature's Chemistry</span>
+          </div>
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li>
+              <a href="index.html" class="nav-link active"
+                >1. Revision Plan &amp; Map</a
+              >
+            </li>
+            <li>
+              <a href="reactions.html" class="nav-link">2. Visual Reactions</a>
+            </li>
+            <li>
+              <a href="flashcards.html" class="nav-link">3. Flashcards</a>
+            </li>
+            <li>
+              <a href="quiz.html" class="nav-link"
+                >4. Practice Quiz &amp; Lab</a
+              >
+            </li>
+            <li>
+              <a href="resources.html" class="nav-link"
+                >5. Videos &amp; Resources</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-progress" title="Overall Revision Mastery">
+          <span>Mastery</span>
+          <div class="progress-mini-bar">
+            <div class="progress-mini-fill" id="global-progress-fill"></div>
+          </div>
+          <strong id="global-progress-pct">0%</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Hero Intro -->
+      <section class="page-hero">
+        <div class="eyebrow">Chemistry</div>
+        <h1 class="page-title">
+          Mastering Organic Reactions &amp; Functional Group Pathways
+        </h1>
+        <p class="page-lead">
+          A structured, minimal, and interactive revision programme covering
+          every organic reaction in SQA Higher Chemistry: addition, elimination,
+          oxidation of alcohols and aldehydes, esterification, hydrolysis,
+          saponification of fats and oils, proteins, and terpene chemistry.
+        </p>
+
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+          "
+        >
+          <a href="reactions.html" class="btn btn-primary"
+            >Explore Visual Reactions &amp; Mechanisms &rarr;</a
+          >
+          <a href="flashcards.html" class="btn"
+            >Practice 24 Active-Recall Flashcards</a
+          >
+          <a href="quiz.html" class="btn"
+            >Launch Quiz &amp; Test-Tube Simulator</a
+          >
+          <a
+            href="Higher-Chemistry-Organic-Reactions-Revision-Plan.md"
+            class="btn"
+            download
+            >Download Markdown Study Guide (.md)</a
+          >
+        </div>
+      </section>
+
+      <!-- Section 1: Interactive Master Reaction Pathway Map -->
+      <section class="section" id="pathway-map">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              Interactive Master Reaction Pathway Map
+            </h2>
+            <p
+              style="
+                color: var(--text-secondary);
+                font-size: 0.92rem;
+                margin-top: 0.2rem;
+              "
+            >
+              Click any functional group node on the map below to inspect its
+              structure, reagents, conditions, and SQA exam tests.
+            </p>
+          </div>
+          <span class="section-subtitle">Click nodes to inspect pathways</span>
+        </div>
+
+        <div class="structure-stage" style="background: var(--bg-card)">
+          <svg
+            viewBox="0 0 1040 530"
+            width="100%"
+            height="auto"
+            role="img"
+            aria-label="Interactive SQA Higher Organic Reaction Pathway Map"
+          >
+            <defs>
+              <marker
+                id="arrow"
+                viewBox="0 0 10 10"
+                refX="7"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#52525B" />
+              </marker>
+              <marker
+                id="arrow-teal"
+                viewBox="0 0 10 10"
+                refX="7"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0D9488" />
+              </marker>
+              <marker
+                id="arrow-amber"
+                viewBox="0 0 10 10"
+                refX="7"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D97706" />
+              </marker>
+              <marker
+                id="arrow-indigo"
+                viewBox="0 0 10 10"
+                refX="7"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4F46E5" />
+              </marker>
+            </defs>
+
+            <!-- Connection Arrows & Labels -->
+            <!-- Alkene -> Alkane -->
+            <line
+              x1="250"
+              y1="70"
+              x2="175"
+              y2="70"
+              stroke="#52525B"
+              stroke-width="1.8"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="212"
+              y="58"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#52525B"
+            >
+              +H₂ / Ni
+            </text>
+
+            <!-- Alkene -> Dihaloalkane -->
+            <line
+              x1="410"
+              y1="70"
+              x2="485"
+              y2="70"
+              stroke="#52525B"
+              stroke-width="1.8"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="448"
+              y="58"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#B45309"
+            >
+              +Br₂ (aq)
+            </text>
+
+            <!-- Alkene <-> Alcohols -->
+            <line
+              x1="320"
+              y1="102"
+              x2="320"
+              y2="168"
+              stroke="#0D9488"
+              stroke-width="2"
+              marker-end="url(#arrow-teal)"
+            />
+            <text
+              x="242"
+              y="138"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#0D9488"
+            >
+              Hydration (+H₂O, H⁺)
+            </text>
+
+            <line
+              x1="342"
+              y1="168"
+              x2="342"
+              y2="102"
+              stroke="#52525B"
+              stroke-width="1.6"
+              stroke-dasharray="4 3"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="425"
+              y="138"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#52525B"
+            >
+              Dehydration (Al₂O₃)
+            </text>
+
+            <!-- Alcohols -> 1°, 2°, 3° branches -->
+            <!-- 1° Alcohol -> Aldehyde -->
+            <path
+              d="M 235 215 L 135 215 L 135 280"
+              fill="none"
+              stroke="#D97706"
+              stroke-width="2"
+              marker-end="url(#arrow-amber)"
+            />
+            <text
+              x="175"
+              y="205"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              font-weight="600"
+              fill="#D97706"
+            >
+              1° + [O] Distil
+            </text>
+
+            <!-- 2° Alcohol -> Ketone -->
+            <line
+              x1="330"
+              y1="234"
+              x2="330"
+              y2="280"
+              stroke="#D97706"
+              stroke-width="2"
+              marker-end="url(#arrow-amber)"
+            />
+            <text
+              x="372"
+              y="260"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              font-weight="600"
+              fill="#D97706"
+            >
+              2° + [O]
+            </text>
+
+            <!-- 3° Alcohol -> No Reaction -->
+            <path
+              d="M 425 215 L 535 215 L 535 280"
+              fill="none"
+              stroke="#71717A"
+              stroke-width="1.8"
+              stroke-dasharray="4 3"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="488"
+              y="205"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#71717A"
+            >
+              3° + [O]
+            </text>
+
+            <!-- Aldehyde -> Carboxylic Acid -->
+            <line
+              x1="135"
+              y1="345"
+              x2="135"
+              y2="412"
+              stroke="#D97706"
+              stroke-width="2"
+              marker-end="url(#arrow-amber)"
+            />
+            <text
+              x="198"
+              y="382"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              font-weight="600"
+              fill="#D97706"
+            >
+              + [O] Reflux
+            </text>
+
+            <!-- Carboxylic Acid <-> Ester -->
+            <line
+              x1="230"
+              y1="440"
+              x2="355"
+              y2="440"
+              stroke="#4F46E5"
+              stroke-width="2"
+              marker-end="url(#arrow-indigo)"
+            />
+            <text
+              x="292"
+              y="428"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              font-weight="600"
+              fill="#4F46E5"
+            >
+              + Alcohol (H₂SO₄)
+            </text>
+
+            <line
+              x1="355"
+              y1="458"
+              x2="230"
+              y2="458"
+              stroke="#52525B"
+              stroke-width="1.6"
+              stroke-dasharray="4 3"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="292"
+              y="476"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#52525B"
+            >
+              + H₂O (Hydrolysis)
+            </text>
+
+            <!-- Ester / Fats & Oils -> Soap + Glycerol -->
+            <line
+              x1="525"
+              y1="448"
+              x2="635"
+              y2="448"
+              stroke="#4F46E5"
+              stroke-width="2"
+              marker-end="url(#arrow-indigo)"
+            />
+            <text
+              x="580"
+              y="435"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              font-weight="600"
+              fill="#4F46E5"
+            >
+              + 3 NaOH (Reflux)
+            </text>
+
+            <!-- Right Column: Terpenes & Proteins -->
+            <!-- Terpenes -> Terpenoids -->
+            <line
+              x1="885"
+              y1="102"
+              x2="885"
+              y2="168"
+              stroke="#D97706"
+              stroke-width="2"
+              marker-end="url(#arrow-amber)"
+            />
+            <text
+              x="938"
+              y="138"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#D97706"
+            >
+              + [O] in plants
+            </text>
+
+            <!-- Amino Acids <-> Proteins -->
+            <line
+              x1="875"
+              y1="345"
+              x2="875"
+              y2="412"
+              stroke="#4F46E5"
+              stroke-width="2"
+              marker-end="url(#arrow-indigo)"
+            />
+            <text
+              x="802"
+              y="382"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#4F46E5"
+            >
+              Condensation (-H₂O)
+            </text>
+
+            <line
+              x1="897"
+              y1="412"
+              x2="897"
+              y2="345"
+              stroke="#52525B"
+              stroke-width="1.6"
+              stroke-dasharray="4 3"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="965"
+              y="382"
+              text-anchor="middle"
+              font-family="IBM Plex Mono, monospace"
+              font-size="10"
+              fill="#52525B"
+            >
+              Hydrolysis (+H₂O)
+            </text>
+
+            <!-- Interactive Nodes -->
+            <!-- 1. Alkane -->
+            <g
+              class="pathway-node"
+              data-node="alkane"
+              transform="translate(30, 38)"
+            >
+              <rect
+                width="142"
+                height="62"
+                rx="8"
+                fill="#F3F1EC"
+                stroke="#C8C4B8"
+                stroke-width="1.5"
+              />
+              <text
+                x="71"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#18181B"
+              >
+                Alkane
+              </text>
+              <text
+                x="71"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#52525B"
+              >
+                Saturated (C–C)
+              </text>
+            </g>
+
+            <!-- 2. Alkene -->
+            <g
+              class="pathway-node selected"
+              data-node="alkene"
+              transform="translate(252, 38)"
+            >
+              <rect
+                width="156"
+                height="62"
+                rx="8"
+                fill="#ECFDF5"
+                stroke="#059669"
+                stroke-width="2"
+              />
+              <text
+                x="78"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#065F46"
+              >
+                Alkene
+              </text>
+              <text
+                x="78"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#059669"
+              >
+                Unsaturated (C=C)
+              </text>
+            </g>
+
+            <!-- 3. Dihaloalkane -->
+            <g
+              class="pathway-node"
+              data-node="dihaloalkane"
+              transform="translate(490, 38)"
+            >
+              <rect
+                width="156"
+                height="62"
+                rx="8"
+                fill="#FFFBEB"
+                stroke="#D97706"
+                stroke-width="1.5"
+              />
+              <text
+                x="78"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#92400E"
+              >
+                Dihaloalkane
+              </text>
+              <text
+                x="78"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#B45309"
+              >
+                Br–C–C–Br (Test)
+              </text>
+            </g>
+
+            <!-- 4. Alcohols -->
+            <g
+              class="pathway-node"
+              data-node="alcohol"
+              transform="translate(235, 172)"
+            >
+              <rect
+                width="190"
+                height="62"
+                rx="8"
+                fill="#F0FDFA"
+                stroke="#0D9488"
+                stroke-width="2"
+              />
+              <text
+                x="95"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#115E59"
+              >
+                Alcohols (1°, 2°, 3°)
+              </text>
+              <text
+                x="95"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#0D9488"
+              >
+                Hydroxyl (–OH)
+              </text>
+            </g>
+
+            <!-- 5. Aldehyde -->
+            <g
+              class="pathway-node"
+              data-node="aldehyde"
+              transform="translate(45, 282)"
+            >
+              <rect
+                width="180"
+                height="62"
+                rx="8"
+                fill="#FFFBEB"
+                stroke="#D97706"
+                stroke-width="2"
+              />
+              <text
+                x="90"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#92400E"
+              >
+                Aldehyde (-al)
+              </text>
+              <text
+                x="90"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#D97706"
+              >
+                Terminal –CHO
+              </text>
+            </g>
+
+            <!-- 6. Ketone -->
+            <g
+              class="pathway-node"
+              data-node="ketone"
+              transform="translate(245, 282)"
+            >
+              <rect
+                width="170"
+                height="62"
+                rx="8"
+                fill="#FFFBEB"
+                stroke="#D97706"
+                stroke-width="2"
+              />
+              <text
+                x="85"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#92400E"
+              >
+                Ketone (-one)
+              </text>
+              <text
+                x="85"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#D97706"
+              >
+                Internal –C(=O)–
+              </text>
+            </g>
+
+            <!-- 7. Tertiary Alcohol / Ketone No Reaction -->
+            <g
+              class="pathway-node"
+              data-node="tertiary"
+              transform="translate(445, 282)"
+            >
+              <rect
+                width="180"
+                height="62"
+                rx="8"
+                fill="#F3F1EC"
+                stroke="#C8C4B8"
+                stroke-width="1.5"
+              />
+              <text
+                x="90"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#52525B"
+              >
+                3° Alcohol &amp; Ketones
+              </text>
+              <text
+                x="90"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#71717A"
+              >
+                Resist Mild [O]
+              </text>
+            </g>
+
+            <!-- 8. Carboxylic Acid -->
+            <g
+              class="pathway-node"
+              data-node="carboxylic"
+              transform="translate(40, 415)"
+            >
+              <rect
+                width="188"
+                height="64"
+                rx="8"
+                fill="#FEF2F2"
+                stroke="#DC2626"
+                stroke-width="2"
+              />
+              <text
+                x="94"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#991B1B"
+              >
+                Carboxylic Acid
+              </text>
+              <text
+                x="94"
+                y="47"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#DC2626"
+              >
+                Carboxyl (–COOH)
+              </text>
+            </g>
+
+            <!-- 9. Ester & Fats/Oils -->
+            <g
+              class="pathway-node"
+              data-node="ester"
+              transform="translate(358, 415)"
+            >
+              <rect
+                width="166"
+                height="64"
+                rx="8"
+                fill="#EEF2FF"
+                stroke="#4F46E5"
+                stroke-width="2"
+              />
+              <text
+                x="83"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#3730A3"
+              >
+                Esters &amp; Fats/Oils
+              </text>
+              <text
+                x="83"
+                y="47"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#4F46E5"
+              >
+                Ester Link (–COO–)
+              </text>
+            </g>
+
+            <!-- 10. Soap & Glycerol -->
+            <g
+              class="pathway-node"
+              data-node="soap"
+              transform="translate(638, 415)"
+            >
+              <rect
+                width="150"
+                height="64"
+                rx="8"
+                fill="#F0FDFA"
+                stroke="#0D9488"
+                stroke-width="2"
+              />
+              <text
+                x="75"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#115E59"
+              >
+                Soap + Glycerol
+              </text>
+              <text
+                x="75"
+                y="47"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#0D9488"
+              >
+                R–COO⁻Na⁺ Salt
+              </text>
+            </g>
+
+            <!-- 11. Terpenes -->
+            <g
+              class="pathway-node"
+              data-node="terpene"
+              transform="translate(795, 38)"
+            >
+              <rect
+                width="180"
+                height="62"
+                rx="8"
+                fill="#ECFDF5"
+                stroke="#059669"
+                stroke-width="2"
+              />
+              <text
+                x="90"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#065F46"
+              >
+                Terpenes (C₅H₈)ₙ
+              </text>
+              <text
+                x="90"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#059669"
+              >
+                Isoprene Units
+              </text>
+            </g>
+
+            <!-- 12. Terpenoids -->
+            <g
+              class="pathway-node"
+              data-node="terpenoid"
+              transform="translate(795, 172)"
+            >
+              <rect
+                width="180"
+                height="62"
+                rx="8"
+                fill="#FFFBEB"
+                stroke="#D97706"
+                stroke-width="1.5"
+              />
+              <text
+                x="90"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#92400E"
+              >
+                Terpenoids
+              </text>
+              <text
+                x="90"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#D97706"
+              >
+                Oxidised Fragrances
+              </text>
+            </g>
+
+            <!-- 13. Amino Acids -->
+            <g
+              class="pathway-node"
+              data-node="aminoacid"
+              transform="translate(795, 282)"
+            >
+              <rect
+                width="180"
+                height="62"
+                rx="8"
+                fill="#F5F3FF"
+                stroke="#7C3AED"
+                stroke-width="1.8"
+              />
+              <text
+                x="90"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#5B21B6"
+              >
+                Amino Acids
+              </text>
+              <text
+                x="90"
+                y="46"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#7C3AED"
+              >
+                –NH₂ and –COOH
+              </text>
+            </g>
+
+            <!-- 14. Proteins -->
+            <g
+              class="pathway-node"
+              data-node="protein"
+              transform="translate(795, 415)"
+            >
+              <rect
+                width="180"
+                height="64"
+                rx="8"
+                fill="#F5F3FF"
+                stroke="#7C3AED"
+                stroke-width="2"
+              />
+              <text
+                x="90"
+                y="27"
+                text-anchor="middle"
+                font-family="Inter, sans-serif"
+                font-weight="600"
+                font-size="13"
+                fill="#5B21B6"
+              >
+                Proteins (Polypeptides)
+              </text>
+              <text
+                x="90"
+                y="47"
+                text-anchor="middle"
+                font-family="IBM Plex Mono, monospace"
+                font-size="11"
+                fill="#7C3AED"
+              >
+                Peptide Link (–CONH–)
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Inspector Panel Updated by Clicking Map Nodes -->
+        <div class="inspector-panel" id="node-inspector" aria-live="polite">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              flex-wrap: wrap;
+              gap: 1rem;
+            "
+          >
+            <div>
+              <span class="badge badge-alkene" id="inspector-badge"
+                >Unsaturated Hydrocarbon &bull; C=C</span
+              >
+              <h3
+                style="font-size: 1.35rem; margin-top: 0.45rem"
+                id="inspector-title"
+              >
+                Alkenes (Addition &amp; Hydration)
+              </h3>
+            </div>
+            <a
+              href="reactions.html#alkenes"
+              class="btn btn-sm btn-primary"
+              id="inspector-link"
+              >View Full Mechanism &amp; Structures &rarr;</a
+            >
+          </div>
+          <p
+            style="color: var(--text-secondary); margin-top: 0.65rem"
+            id="inspector-desc"
+          >
+            Alkenes contain at least one carbon-to-carbon double bond (C=C).
+            Because they are unsaturated, they undergo
+            <strong>addition reactions</strong> where the double bond opens to
+            join two new atoms across the carbons—converting two reactant
+            molecules into a single saturated product molecule (100% atom
+            economy).
+          </p>
+          <div class="grid-3" style="margin-top: 1.1rem" id="inspector-details">
+            <div
+              style="
+                background: var(--bg-subtle);
+                padding: 0.9rem;
+                border-radius: var(--radius-sm);
+              "
+            >
+              <strong
+                style="
+                  font-size: 0.8rem;
+                  font-family: var(--font-mono);
+                  text-transform: uppercase;
+                  color: var(--text-muted);
+                "
+                >Key Reactions</strong
+              >
+              <p style="font-size: 0.88rem; margin-top: 0.25rem">
+                &bull; Hydrogenation (+H₂, Ni catalyst &rarr; Alkane)<br />&bull;
+                Halogenation (+Br₂ &rarr; Dihaloalkane)<br />&bull; Hydration
+                (+H₂O, H₃PO₄ catalyst &rarr; Alcohol)
+              </p>
+            </div>
+            <div
+              style="
+                background: var(--bg-subtle);
+                padding: 0.9rem;
+                border-radius: var(--radius-sm);
+              "
+            >
+              <strong
+                style="
+                  font-size: 0.8rem;
+                  font-family: var(--font-mono);
+                  text-transform: uppercase;
+                  color: var(--text-muted);
+                "
+                >SQA Exam Example</strong
+              >
+              <p style="font-size: 0.88rem; margin-top: 0.25rem">
+                Propene + H₂O produces a mixture of
+                <strong>propan-2-ol</strong> (major product, 2° alcohol) and
+                <strong>propan-1-ol</strong> (minor product, 1° alcohol).
+              </p>
+            </div>
+            <div
+              style="
+                background: var(--bg-subtle);
+                padding: 0.9rem;
+                border-radius: var(--radius-sm);
+              "
+            >
+              <strong
+                style="
+                  font-size: 0.8rem;
+                  font-family: var(--font-mono);
+                  text-transform: uppercase;
+                  color: var(--text-muted);
+                "
+                >Chemical Test</strong
+              >
+              <p style="font-size: 0.88rem; margin-top: 0.25rem">
+                Rapidly decolourises
+                <strong>orange/brown bromine solution (Br₂)</strong> to
+                colourless at room temperature.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Interactive 4-Stage Revision Plan -->
+      <section class="section" id="schedule">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">4-Stage Revision Plan</h2>
+            <p
+              style="
+                color: var(--text-secondary);
+                font-size: 0.92rem;
+                margin-top: 0.2rem;
+              "
+            >
+              Check off each study milestone as you complete it. Your progress
+              is automatically saved in your browser.
+            </p>
+          </div>
+          <button class="btn btn-sm" id="reset-tasks-btn" type="button">
+            Reset Checklist
+          </button>
+        </div>
+
+        <div class="grid-2">
+          <!-- Stage 1 -->
+          <div class="card">
+            <div class="card-title">
+              <span>Stage 1: Foundations, Isomers &amp; Addition</span>
+              <span class="badge badge-alkene">Unit 2.1</span>
+            </div>
+            <p class="card-body">
+              Master systematic IUPAC naming up to C₈, structural isomerism,
+              alcohol classification (1°, 2°, 3°), and addition/elimination
+              reactions.
+            </p>
+            <ul class="checklist">
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w1_t1" />
+                <span
+                  >Name and draw branched alkanes, alkenes, alcohols, aldehydes,
+                  ketones, carboxylic acids, and esters (up to C₈).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w1_t2" />
+                <span
+                  >Classify any alcohol as <strong>primary (1°)</strong>,
+                  <strong>secondary (2°)</strong>, or
+                  <strong>tertiary (3°)</strong> by inspecting the C–OH
+                  carbon.</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w1_t3" />
+                <span
+                  >Predict both alcohol isomers formed when an unsymmetrical
+                  alkene (e.g. propene or but-1-ene) undergoes hydration
+                  (+H₂O).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w1_t4" />
+                <span
+                  >Explain catalytic hydrogenation of unsaturated vegetable oils
+                  (+H₂, Nickel catalyst) to make solid spreads.</span
+                >
+              </label>
+            </ul>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="card">
+            <div class="card-title">
+              <span>Stage 2: Oxidation, Carbonyls &amp; Antioxidants</span>
+              <span class="badge badge-carbonyl">Unit 2.2 &amp; 2.5</span>
+            </div>
+            <p class="card-body">
+              Understand oxidation via O:H ratios, distinguish aldehydes from
+              ketones, and memorise all four oxidising agent colour changes.
+            </p>
+            <ul class="checklist">
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w2_t1" />
+                <span
+                  >Calculate oxygen-to-hydrogen (O:H) ratios to prove whether a
+                  conversion is oxidation (increase) or reduction
+                  (decrease).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w2_t2" />
+                <span
+                  >Trace oxidation: 1° alcohol &rarr; aldehyde (distillation)
+                  &rarr; carboxylic acid (reflux); 2° alcohol &rarr; ketone; 3°
+                  alcohol &rarr; no reaction.</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w2_t3" />
+                <span
+                  >Memorise colour changes for acidified dichromate (orange
+                  &rarr; green), hot CuO (black &rarr; brown/pink), Fehling's
+                  (blue &rarr; red ppt), and Tollens' (silver mirror).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w2_t4" />
+                <span
+                  >Explain how antioxidants (e.g. Vitamin C) prevent rancidity
+                  in food by acting as reducing agents (undergoing
+                  oxidation).</span
+                >
+              </label>
+            </ul>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="card">
+            <div class="card-title">
+              <span>Stage 3: Esters, Fats, Oils, Soaps &amp; Emulsifiers</span>
+              <span class="badge badge-ester">Unit 2.2, 2.3 &amp; 2.6</span>
+            </div>
+            <p class="card-body">
+              Connect condensation and hydrolysis across flavour esters,
+              triglyceride fats/oils, soap manufacture, and food emulsifiers.
+            </p>
+            <ul class="checklist">
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w3_t1" />
+                <span
+                  >Identify parent alcohol (-yl) and carboxylic acid (-oate)
+                  from any ester name or structural formula, and describe the
+                  mandatory ester lab setup.</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w3_t2" />
+                <span
+                  >Explain why vegetable oils have lower melting points than
+                  animal fats (unsaturation &rarr; kinks &rarr; poorer packing
+                  &rarr; weaker LDFs).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w3_t3" />
+                <span
+                  >Describe saponification (alkaline hydrolysis of fats/oils
+                  with NaOH) to yield glycerol (propane-1,2,3-triol) + 3 soap
+                  ions.</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w3_t4" />
+                <span
+                  >Compare hydrophobic tails and hydrophilic heads in soaps,
+                  soapless detergents (no scum in hard water), and food
+                  emulsifiers (mono-/diglycerides).</span
+                >
+              </label>
+            </ul>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="card">
+            <div class="card-title">
+              <span>Stage 4: Proteins, Terpenes &amp; Exam Mastery</span>
+              <span class="badge badge-amide">Unit 2.4 &amp; 2.7</span>
+            </div>
+            <p class="card-body">
+              Master peptide link formation/hydrolysis, protein denaturation,
+              isoprene units in terpenes, and SQA 3-mark open-ended questions.
+            </p>
+            <ul class="checklist">
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w4_t1" />
+                <span
+                  >Draw condensation of amino acids (–NH₂ and –COOH) to form
+                  polypeptide chains containing peptide/amide links
+                  (–CONH–).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w4_t2" />
+                <span
+                  >Distinguish protein hydrolysis (breaking covalent peptide
+                  links) from denaturation (heat/pH breaking hydrogen bonds,
+                  unfolding 3D shape).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w4_t3" />
+                <span
+                  >Identify isoprene (2-methylbuta-1,3-diene, C₅H₈) and
+                  calculate the number of isoprene units in any terpene (Carbons
+                  &divide; 5).</span
+                >
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" data-task="w4_t4" />
+                <span
+                  >Complete all 24 flashcards and score 85%+ on the Practice
+                  Quiz &amp; Lab Simulator.</span
+                >
+              </label>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Master Reference Table of Reactions & Colour Changes -->
+      <section class="section" id="reference-table">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">
+              Master Reference Table: Reactions, Reagents &amp; Observations
+            </h2>
+            <p
+              style="
+                color: var(--text-secondary);
+                font-size: 0.92rem;
+                margin-top: 0.2rem;
+              "
+            >
+              Every core organic reaction in SQA Higher Chemistry summarised in
+              one rapid-lookup table.
+            </p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Reaction &amp; Type</th>
+                <th>Reactants</th>
+                <th>Reagents &amp; Conditions</th>
+                <th>Products</th>
+                <th>Observation / Colour Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Hydrogenation</strong><br /><span
+                    class="badge badge-alkene"
+                    >Addition</span
+                  >
+                </td>
+                <td>Alkene (or unsaturated oil) + H₂</td>
+                <td><strong>Nickel (Ni) catalyst</strong>, heat</td>
+                <td>Alkane (or hardened fat)</td>
+                <td>
+                  Liquid vegetable oil becomes a higher-melting solid spread.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Halogenation</strong><br /><span
+                    class="badge badge-alkene"
+                    >Addition</span
+                  >
+                </td>
+                <td>Alkene + Br₂(aq)</td>
+                <td>Room temperature</td>
+                <td>Dihaloalkane</td>
+                <td>
+                  <span class="colour-transition">
+                    <span class="swatch-dot" style="background: #d97706"></span>
+                    Orange/Brown &rarr;
+                    <span class="swatch-dot" style="background: #ffffff"></span>
+                    Colourless
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Hydration</strong><br /><span
+                    class="badge badge-alkene"
+                    >Addition</span
+                  >
+                </td>
+                <td>Alkene + H₂O(g)</td>
+                <td>
+                  <strong>Acid catalyst</strong> (conc. H₃PO₄), high
+                  temp/pressure
+                </td>
+                <td>Alcohol (mixture of 1° and 2° isomers)</td>
+                <td>
+                  Forms propan-2-ol (major) + propan-1-ol (minor) from propene.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Dehydration</strong><br /><span
+                    class="badge badge-hydroxyl"
+                    >Elimination</span
+                  >
+                </td>
+                <td>Alcohol</td>
+                <td>Heated <strong>Al₂O₃ catalyst</strong> (or conc. H₂SO₄)</td>
+                <td>Alkene + H₂O</td>
+                <td>Produces unsaturated gas that decolourises Br₂(aq).</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Oxidation of 1° Alcohol</strong><br /><span
+                    class="badge badge-carbonyl"
+                    >Oxidation</span
+                  >
+                </td>
+                <td>Primary Alcohol (R–CH₂OH)</td>
+                <td>
+                  Acidified K₂Cr₂O₇ or hot CuO<br />(Distil for aldehyde; Reflux
+                  for acid)
+                </td>
+                <td>
+                  <strong>Aldehyde</strong> &rarr;
+                  <strong>Carboxylic Acid</strong> + H₂O
+                </td>
+                <td>
+                  <span class="colour-transition">
+                    <span class="swatch-dot" style="background: #ea580c"></span>
+                    Orange &rarr;
+                    <span class="swatch-dot" style="background: #0f766e"></span>
+                    Green (Cr₂O₇²⁻)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Oxidation of 2° Alcohol</strong><br /><span
+                    class="badge badge-carbonyl"
+                    >Oxidation</span
+                  >
+                </td>
+                <td>Secondary Alcohol (R–CH(OH)–R')</td>
+                <td>Acidified K₂Cr₂O₇ or hot CuO(s)</td>
+                <td><strong>Ketone</strong> + H₂O (No further oxidation)</td>
+                <td>
+                  <span class="colour-transition">
+                    <span class="swatch-dot" style="background: #18181b"></span>
+                    Black CuO &rarr;
+                    <span class="swatch-dot" style="background: #b45309"></span>
+                    Brown/Pink Cu
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Oxidation of Aldehyde</strong><br /><span
+                    class="badge badge-carbonyl"
+                    >Oxidation</span
+                  >
+                </td>
+                <td>Aldehyde (R–CHO)</td>
+                <td>
+                  <strong>Fehling's solution</strong> or
+                  <strong>Tollens' reagent</strong>, warm water bath
+                </td>
+                <td>Carboxylic Acid (or carboxylate ion)</td>
+                <td>
+                  <span class="colour-transition">
+                    <span class="swatch-dot" style="background: #1d4ed8"></span>
+                    Blue &rarr;
+                    <span class="swatch-dot" style="background: #b91c1c"></span>
+                    Brick-red ppt (Fehling's) </span
+                  ><br />
+                  <span class="colour-transition" style="margin-top: 4px">
+                    <span class="swatch-dot" style="background: #ffffff"></span>
+                    Colourless &rarr;
+                    <span class="swatch-dot" style="background: #9ca3af"></span>
+                    Silver mirror (Tollens')
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Esterification</strong><br /><span
+                    class="badge badge-ester"
+                    >Condensation</span
+                  >
+                </td>
+                <td>Carboxylic Acid + Alcohol</td>
+                <td>
+                  <strong>Conc. H₂SO₄ catalyst</strong>, warm water bath, wet
+                  paper towel condenser
+                </td>
+                <td><strong>Ester</strong> + H₂O</td>
+                <td>
+                  <strong>Sweet/fruity smell</strong>; oily immiscible layer on
+                  NaHCO₃(aq).
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Ester Hydrolysis</strong><br /><span
+                    class="badge badge-ester"
+                    >Hydrolysis</span
+                  >
+                </td>
+                <td>Ester + H₂O</td>
+                <td>
+                  Dilute acid (H⁺) or alkali (NaOH), heat under
+                  <strong>reflux</strong>
+                </td>
+                <td>
+                  Alcohol + Carboxylic Acid (or
+                  <strong>carboxylate salt</strong> with NaOH)
+                </td>
+                <td>
+                  Alkaline hydrolysis is irreversible and gives higher yield.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Saponification</strong><br /><span
+                    class="badge badge-ester"
+                    >Alkaline Hydrolysis</span
+                  >
+                </td>
+                <td>Fat/Oil (Triglyceride) + 3 NaOH</td>
+                <td>
+                  Boil under <strong>reflux with NaOH(aq)</strong>, then add
+                  saturated NaCl(aq)
+                </td>
+                <td>
+                  <strong>Glycerol</strong> (propane-1,2,3-triol) +
+                  <strong>3 Soap molecules</strong> (RCOO⁻Na⁺)
+                </td>
+                <td>
+                  Soap precipitates out upon adding saturated NaCl solution.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Peptide Formation</strong><br /><span
+                    class="badge badge-amide"
+                    >Condensation</span
+                  >
+                </td>
+                <td>Amino Acid + Amino Acid</td>
+                <td>Ribosomal enzyme synthesis</td>
+                <td><strong>Polypeptide / Protein</strong> + H₂O</td>
+                <td>
+                  Forms covalent <strong>peptide (amide) link (–CONH–)</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Protein Hydrolysis</strong><br /><span
+                    class="badge badge-amide"
+                    >Hydrolysis</span
+                  >
+                </td>
+                <td>Protein + H₂O</td>
+                <td>Acid reflux (conc. HCl) or digestive enzymes</td>
+                <td>Constituent <strong>Amino Acids</strong></td>
+                <td>
+                  Amino acids identified by <strong>chromatography</strong>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <strong
+            >SQA Higher Chemistry — Organic Reactions Revision Portal</strong
+          ><br />
+          Designed for Unit 2: Nature's Chemistry (Scottish Curriculum for
+          Excellence)
+        </div>
+        <div style="display: flex; gap: 1rem">
+          <a href="reactions.html" style="color: var(--text-secondary)"
+            >Visual Reactions</a
+          >
+          <a href="flashcards.html" style="color: var(--text-secondary)"
+            >Flashcards</a
+          >
+          <a href="quiz.html" style="color: var(--text-secondary)"
+            >Practice Quiz</a
+          >
+          <a href="resources.html" style="color: var(--text-secondary)"
+            >Resources</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      // Node Inspector Data for the Interactive Pathway Map
+      const NODE_DATA = {
+        alkane: {
+          badge: 'Saturated Hydrocarbon • C–C',
+          badgeClass: 'badge-alkene',
+          title: 'Alkanes (Saturated Hydrocarbons)',
+          link: 'reactions.html#alkenes',
+          desc: 'Alkanes contain only carbon-to-carbon single covalent bonds (C–C) and follow the general formula CₙH₂ₙ₊₂. In Higher Chemistry, alkanes (and saturated fats) are formed by the catalytic hydrogenation of alkenes (or unsaturated oils).',
+          col1Title: 'Formation Reaction',
+          col1Body:
+            '• Hydrogenation: Alkene + H₂ → Alkane using a finely divided Nickel (Ni) catalyst.',
+          col2Title: 'Intermolecular Forces',
+          col2Body:
+            '• Non-polar molecules with only London dispersion forces (LDFs). Linear chains pack closely together.',
+          col3Title: 'Chemical Test',
+          col3Body:
+            '• Does NOT decolourise bromine solution (Br₂ remains orange/brown in the dark).',
+        },
+        alkene: {
+          badge: 'Unsaturated Hydrocarbon • C=C',
+          badgeClass: 'badge-alkene',
+          title: 'Alkenes (Addition & Hydration)',
+          link: 'reactions.html#alkenes',
+          desc: 'Alkenes contain at least one carbon-to-carbon double bond (C=C). Because they are unsaturated, they undergo addition reactions where the double bond opens to join two new atoms across the carbons—converting two reactant molecules into a single saturated product molecule (100% atom economy).',
+          col1Title: 'Key Reactions',
+          col1Body:
+            '• Hydrogenation (+H₂, Ni catalyst → Alkane)<br>• Halogenation (+Br₂ → Dihaloalkane)<br>• Hydration (+H₂O, H₃PO₄ catalyst → Alcohol)',
+          col2Title: 'SQA Exam Example',
+          col2Body:
+            'Propene + H₂O produces a mixture of propan-2-ol (major product, 2° alcohol) and propan-1-ol (minor product, 1° alcohol).',
+          col3Title: 'Chemical Test',
+          col3Body:
+            'Rapidly decolourises orange/brown bromine solution (Br₂) to colourless at room temperature.',
+        },
+        dihaloalkane: {
+          badge: 'Addition Product • Br–C–C–Br',
+          badgeClass: 'badge-carbonyl',
+          title: 'Dihaloalkanes (Bromination Test for Unsaturation)',
+          link: 'reactions.html#alkenes',
+          desc: 'Formed immediately when an alkene (or unsaturated fat/oil or terpene) reacts with bromine solution (Br₂) in an addition reaction across the C=C double bond.',
+          col1Title: 'Reaction Equation',
+          col1Body: '• R–CH=CH₂ + Br₂ → R–CHBr–CH₂Br (1,2-dibromoalkane).',
+          col2Title: 'Quantitative Use in Oils',
+          col2Body:
+            '• The volume of bromine solution decolourised measures the degree of unsaturation of an edible oil or terpene.',
+          col3Title: 'Observation',
+          col3Body:
+            '• Orange/brown bromine solution immediately turns colourless.',
+        },
+        alcohol: {
+          badge: 'Hydroxyl Functional Group • –OH',
+          badgeClass: 'badge-hydroxyl',
+          title: 'Alcohols: Primary (1°), Secondary (2°) & Tertiary (3°)',
+          link: 'reactions.html#oxidation',
+          desc: 'Alcohols contain the polar hydroxyl group (–OH), enabling intermolecular hydrogen bonding (giving higher boiling points than alkanes). Their oxidation behaviour depends strictly on how many carbon atoms are attached to the C–OH carbon.',
+          col1Title: 'Classification Rule',
+          col1Body:
+            '• 1° Alcohol: C–OH bonded to 1 C atom<br>• 2° Alcohol: C–OH bonded to 2 C atoms<br>• 3° Alcohol: C–OH bonded to 3 C atoms',
+          col2Title: 'Key Reactions',
+          col2Body:
+            '• Oxidation (+[O]) of 1° & 2° alcohols<br>• Esterification (+ Carboxylic acid)<br>• Dehydration (Al₂O₃ catalyst → Alkene)',
+          col3Title: 'Oxidising Agents',
+          col3Body:
+            '• Acidified K₂Cr₂O₇ (Orange → Green)<br>• Hot black CuO solid (Black → Brown/Pink Cu)',
+        },
+        aldehyde: {
+          badge: 'Terminal Carbonyl Group • –CHO',
+          badgeClass: 'badge-carbonyl',
+          title: 'Aldehydes (-al): Partial Oxidation of 1° Alcohols',
+          link: 'reactions.html#oxidation',
+          desc: 'Aldehydes contain the carbonyl group (C=O) at the END of the carbon chain (C1), bonded to at least one hydrogen atom (–CHO). Because they still have a C–H bond on the carbonyl carbon, aldehydes are easily oxidised to carboxylic acids.',
+          col1Title: 'How to Make & Isolate',
+          col1Body:
+            '• Mild oxidation of a primary (1°) alcohol using acidified dichromate or hot CuO, using DISTILLATION so the volatile aldehyde distils off before further oxidation.',
+          col2Title: 'Further Oxidation',
+          col2Body:
+            '• Heating under REFLUX with excess oxidising agent converts the aldehyde into a carboxylic acid (–COOH), increasing the O:H ratio.',
+          col3Title: 'Distinguishing Tests',
+          col3Body:
+            '• Tollens’ reagent: Colourless → Silver mirror<br>• Fehling’s solution: Blue → Brick-red precipitate<br>• Acidified dichromate: Orange → Green',
+        },
+        ketone: {
+          badge: 'Internal Carbonyl Group • –C(=O)–',
+          badgeClass: 'badge-carbonyl',
+          title: 'Ketones (-one): Oxidation of 2° Alcohols',
+          link: 'reactions.html#oxidation',
+          desc: 'Ketones contain a carbonyl group (C=O) on an INTERNAL carbon atom bonded to two alkyl carbon groups on either side. Because there is no hydrogen atom attached to the C=O carbon, ketones resist further oxidation.',
+          col1Title: 'How It Is Formed',
+          col1Body:
+            '• Oxidation of a secondary (2°) alcohol (e.g. propan-2-ol → propanone + H₂O) using acidified dichromate or hot CuO.',
+          col2Title: 'Physical Properties',
+          col2Body:
+            '• Polar C=O bond gives permanent dipole-dipole interactions (higher boiling point than alkanes, lower than alcohols as no O–H hydrogen bonding).',
+          col3Title: 'Distinguishing Tests',
+          col3Body:
+            '• NO reaction with Tollens’ reagent (stays colourless), Fehling’s solution (stays blue), or acidified dichromate (stays orange).',
+        },
+        tertiary: {
+          badge: 'Sterically Hindered • No α C–H Bond',
+          badgeClass: 'badge-hydroxyl',
+          title: 'Why Tertiary (3°) Alcohols & Ketones Resist Oxidation',
+          link: 'reactions.html#oxidation',
+          desc: 'Mild oxidising agents (such as acidified potassium dichromate, hot CuO, Fehling’s, or Tollens’) oxidise alcohols by removing a hydrogen from the –OH group and a hydrogen from the carbon attached to the –OH group.',
+          col1Title: '3° Alcohol Structure',
+          col1Body:
+            '• In 2-methylpropan-2-ol, the C–OH carbon is bonded to three methyl (–CH₃) groups and has zero C–H bonds.',
+          col2Title: 'Ketone Structure',
+          col2Body:
+            '• In propanone, the C=O carbon is bonded to two methyl (–CH₃) groups and has zero C–H bonds.',
+          col3Title: 'Exam Conclusion',
+          col3Body:
+            '• Breaking a strong C–C covalent bond requires combustion, so neither reacts with mild oxidising agents.',
+        },
+        carboxylic: {
+          badge: 'Carboxyl Functional Group • –COOH',
+          badgeClass: 'badge-carboxyl',
+          title: 'Carboxylic Acids (-oic acid)',
+          link: 'reactions.html#esters',
+          desc: 'Carboxylic acids contain the carboxyl group (–COOH) and have a pH less than 7. They are formed by the full oxidation of primary (1°) alcohols or aldehydes under reflux.',
+          col1Title: 'Esterification',
+          col1Body:
+            '• Reacts reversibly with an alcohol (conc. H₂SO₄ catalyst) in a condensation reaction to form an ester + water.',
+          col2Title: 'Neutralisation Reactions',
+          col2Body:
+            '• Reacts with bases (NaOH, metal oxides, or metal carbonates) to form carboxylate salts (e.g. propanoic acid + NaOH → sodium propanoate + H₂O).',
+          col3Title: 'Intermolecular Forces',
+          col3Body:
+            '• Strong hydrogen bonding between –COOH groups gives carboxylic acids even higher boiling points than alcohols of similar mass.',
+        },
+        ester: {
+          badge: 'Ester Link • –COO–',
+          badgeClass: 'badge-ester',
+          title: 'Esters & Edible Fats/Oils (Triesters)',
+          link: 'reactions.html#esters',
+          desc: 'Esters contain the carboxylate ester link (–COO–) formed by condensation between an alcohol and a carboxylic acid (releasing H₂O). Edible fats and oils are triesters (triglycerides) made from 1 glycerol molecule and 3 fatty acid chains.',
+          col1Title: 'Naming & Formation',
+          col1Body:
+            '• Alcohol gives the "-yl" prefix; Carboxylic acid gives the "-oate" suffix (e.g. propan-1-ol + ethanoic acid ⇌ propyl ethanoate + H₂O).',
+          col2Title: 'Fats vs Oils (3-Mark Exam Q)',
+          col2Body:
+            '• Oils have more C=C double bonds → kinked chains → cannot pack closely → weaker London dispersion forces → lower melting point than saturated fats.',
+          col3Title: 'Hydrolysis',
+          col3Body:
+            '• Split by reaction with water (+H₂O) using acid (reversible) or NaOH alkali (irreversible, forming alcohol + carboxylate salt).',
+        },
+        soap: {
+          badge: 'Saponification Product • R–COO⁻Na⁺',
+          badgeClass: 'badge-hydroxyl',
+          title: 'Soaps, Detergents & Emulsifiers',
+          link: 'reactions.html#fats-soaps',
+          desc: 'Alkaline hydrolysis (saponification) of edible fats or oils with sodium hydroxide (NaOH) produces glycerol (propane-1,2,3-triol) and three sodium salts of fatty acids (soap).',
+          col1Title: 'Soap Ion Structure',
+          col1Body:
+            '• Long non-polar hydrocarbon chain (hydrophobic tail, dissolves in grease) + ionic carboxylate group –COO⁻ (hydrophilic head, dissolves in water).',
+          col2Title: 'Micelle Cleaning Action',
+          col2Body:
+            '• Tails embed in grease; negatively charged heads face water, forming spherical micelles that repel each other and suspend grease as an emulsion.',
+          col3Title: 'Hard Water & Emulsifiers',
+          col3Body:
+            '• Soap forms insoluble scum with Ca²⁺/Mg²⁺; soapless detergents do not. Food emulsifiers are mono-/diglycerides made from glycerol + 1 or 2 fatty acids.',
+        },
+        terpene: {
+          badge: 'Unsaturated Plant Hydrocarbons • (C₅H₈)ₙ',
+          badgeClass: 'badge-alkene',
+          title: 'Terpenes & Isoprene Units',
+          link: 'reactions.html#terpenes',
+          desc: 'Terpenes are unsaturated hydrocarbons found in plant essential oils, formed by joining together units of isoprene (systematic name: 2-methylbuta-1,3-diene, C₅H₈).',
+          col1Title: 'Isoprene Unit Rule',
+          col1Body:
+            '• Each isoprene unit has 5 carbons (C₅H₈). Divide total carbons by 5: C₁₀ = 2 units; C₁₅ = 3 units; C₃₀ (squalene) = 6 units; C₄₀ (β-carotene) = 8 units.',
+          col2Title: 'Reactions of Terpenes',
+          col2Body:
+            '• Undergo addition with Br₂ (decolourising bromine) and hydrogenation (+H₂, Ni catalyst) across their C=C double bonds.',
+          col3Title: 'Oxidation in Plants',
+          col3Body:
+            '• Oxidised to form oxygen-containing terpenoids (alcohols, aldehydes, ketones) responsible for distinctive spice/herb aromas.',
+        },
+        terpenoid: {
+          badge: 'Oxidised Terpene Derivatives • –OH / –CHO / C=O',
+          badgeClass: 'badge-carbonyl',
+          title: 'Terpenoids (Oxidised Fragrance Compounds)',
+          link: 'reactions.html#terpenes',
+          desc: 'When terpenes are oxidised within plants (or on exposure to air and light), they form terpenoids containing hydroxyl, carbonyl, or ester groups that contribute to complex essential oil aromas.',
+          col1Title: 'Classic SQA Example',
+          col1Body:
+            '• Menthol (a cyclic 2° alcohol in peppermint oil) is oxidised to menthone (a cyclic ketone), increasing the O:H ratio from 1:20 to 1:18.',
+          col2Title: 'Storage of Essential Oils',
+          col2Body:
+            '• Stored in dark brown glass bottles with tight lids to prevent UV light and oxygen from causing unwanted oxidation of terpenes.',
+          col3Title: 'Extraction Method',
+          col3Body:
+            '• Extracted from plant materials in the laboratory by steam distillation.',
+        },
+        aminoacid: {
+          badge: 'Bifunctional Monomers • –NH₂ & –COOH',
+          badgeClass: 'badge-amide',
+          title: 'Amino Acids (Protein Monomers)',
+          link: 'reactions.html#proteins',
+          desc: 'Amino acids are the building blocks of proteins. Every α-amino acid contains both a basic amino group (–NH₂) and an acidic carboxyl group (–COOH) bonded to the same central carbon atom.',
+          col1Title: 'Condensation Polymerisation',
+          col1Body:
+            '• The –COOH group of one amino acid reacts with the –NH₂ group of another, eliminating H₂O and forming a peptide (amide) link (–CONH–).',
+          col2Title: 'Essential Amino Acids',
+          col2Body:
+            '• Amino acids that cannot be synthesised by the human body and must be obtained directly from dietary protein.',
+          col3Title: 'Identification',
+          col3Body:
+            '• Separated and identified after protein hydrolysis using paper or thin-layer chromatography (comparing Rf values).',
+        },
+        protein: {
+          badge: 'Peptide / Amide Link • –CONH–',
+          badgeClass: 'badge-amide',
+          title: 'Proteins: Structure, Hydrolysis & Denaturation',
+          link: 'reactions.html#proteins',
+          desc: 'Proteins are natural polyamides formed by condensation polymerisation of amino acids. Their biological function (such as enzyme catalysis) depends on their specific 3D folded geometry.',
+          col1Title: 'Peptide Link (–CONH–)',
+          col1Body:
+            '• Covalent amide bond linking amino acid residues. Broken during digestion or acid reflux by HYDROLYSIS (+H₂O).',
+          col2Title: 'Denaturation (Heat or pH)',
+          col2Body:
+            '• Heating or changing pH disrupts intermolecular HYDROGEN BONDS between side chains, causing the protein to unfold irreversibly.',
+          col3Title: 'Effect on Enzymes & Food',
+          col3Body:
+            '• Denaturing changes the shape of an enzyme’s active site (stopping catalysis) and changes food texture (e.g. egg white turning solid).',
+        },
+      };
+
+      document.querySelectorAll('.pathway-node').forEach(node => {
+        node.addEventListener('click', () => {
+          document
+            .querySelectorAll('.pathway-node')
+            .forEach(n => n.classList.remove('selected'));
+          node.classList.add('selected');
+
+          const key = node.getAttribute('data-node');
+          const info = NODE_DATA[key];
+          if (!info) return;
+
+          const badgeEl = document.getElementById('inspector-badge');
+          badgeEl.className = `badge ${info.badgeClass}`;
+          badgeEl.textContent = info.badge;
+
+          document.getElementById('inspector-title').textContent = info.title;
+          document
+            .getElementById('inspector-link')
+            .setAttribute('href', info.link);
+          document.getElementById('inspector-desc').innerHTML = info.desc;
+
+          document.getElementById('inspector-details').innerHTML = `
+          <div style="background: var(--bg-subtle); padding: 0.9rem; border-radius: var(--radius-sm);">
+            <strong style="font-size: 0.8rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--text-muted);">${info.col1Title}</strong>
+            <p style="font-size: 0.88rem; margin-top: 0.25rem;">${info.col1Body}</p>
+          </div>
+          <div style="background: var(--bg-subtle); padding: 0.9rem; border-radius: var(--radius-sm);">
+            <strong style="font-size: 0.8rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--text-muted);">${info.col2Title}</strong>
+            <p style="font-size: 0.88rem; margin-top: 0.25rem;">${info.col2Body}</p>
+          </div>
+          <div style="background: var(--bg-subtle); padding: 0.9rem; border-radius: var(--radius-sm);">
+            <strong style="font-size: 0.8rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--text-muted);">${info.col3Title}</strong>
+            <p style="font-size: 0.88rem; margin-top: 0.25rem;">${info.col3Body}</p>
+          </div>
+        `;
+        });
+      });
+
+      // Weekly Checklist Persistence
+      const savedTasks = getSavedState(STORAGE_KEYS.TASKS, {});
+      const checkboxes = document.querySelectorAll('input[data-task]');
+
+      checkboxes.forEach(cb => {
+        const taskKey = cb.getAttribute('data-task');
+        if (savedTasks[taskKey]) {
+          cb.checked = true;
+          cb.closest('.checklist-item').classList.add('completed');
+        }
+        cb.addEventListener('change', () => {
+          const current = getSavedState(STORAGE_KEYS.TASKS, {});
+          current[taskKey] = cb.checked;
+          cb.closest('.checklist-item').classList.toggle(
+            'completed',
+            cb.checked,
+          );
+          setSavedState(STORAGE_KEYS.TASKS, current);
+        });
+      });
+
+      document
+        .getElementById('reset-tasks-btn')
+        .addEventListener('click', () => {
+          setSavedState(STORAGE_KEYS.TASKS, {});
+          checkboxes.forEach(cb => {
+            cb.checked = false;
+            cb.closest('.checklist-item').classList.remove('completed');
+          });
+        });
+    </script>
+  </body>
+</html>

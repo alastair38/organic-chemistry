@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active-Recall Flashcards — SQA Higher Chemistry Organic Reactions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">C=O</div>
+        <div class="brand-text">
+          <span class="brand-title">Higher Chemistry</span>
+          <span class="brand-subtitle">SQA Nature's Chemistry</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">1. Revision Plan &amp; Map</a></li>
+          <li><a href="reactions.html" class="nav-link">2. Visual Reactions</a></li>
+          <li><a href="flashcards.html" class="nav-link active">3. Flashcards</a></li>
+          <li><a href="quiz.html" class="nav-link">4. Practice Quiz &amp; Lab</a></li>
+          <li><a href="resources.html" class="nav-link">5. Videos &amp; Resources</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-progress" title="Overall Revision Mastery">
+        <span>Mastery</span>
+        <div class="progress-mini-bar">
+          <div class="progress-mini-fill" id="global-progress-fill"></div>
+        </div>
+        <strong id="global-progress-pct">0%</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="eyebrow">Active Recall &bull; Spaced Repetition Deck</div>
+      <h1 class="page-title">24 SQA Higher Organic Chemistry Flashcards</h1>
+      <p class="page-lead">
+        Click the card (or press <span class="chem-formula">Space</span>) to flip between question and model SQA answer.
+        Rate each card's confidence to track your mastery and filter for cards that need review.
+      </p>
+    </section>
+
+    <!-- Deck Controls & Filter Bar -->
+    <section class="section">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+        <div class="filter-bar" id="deck-filters" style="margin-bottom: 0;">
+          <button type="button" class="filter-btn active" data-cat="all">All Cards (24)</button>
+          <button type="button" class="filter-btn" data-cat="oxidation">Alcohols &amp; Oxidation</button>
+          <button type="button" class="filter-btn" data-cat="esters">Esters &amp; Hydrolysis</button>
+          <button type="button" class="filter-btn" data-cat="fats">Fats, Oils &amp; Soaps</button>
+          <button type="button" class="filter-btn" data-cat="proteins">Proteins &amp; Terpenes</button>
+          <button type="button" class="filter-btn" data-cat="review">Needs Review</button>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" class="btn btn-sm" id="shuffle-deck-btn">Shuffle Deck</button>
+          <button type="button" class="btn btn-sm" id="reset-flashcards-btn">Reset Mastery</button>
+        </div>
+      </div>
+
+      <!-- Mastery Counter Strip -->
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 0.82rem;">
+        <span class="badge badge-alkene">Mastered: <strong id="count-mastered">0</strong></span>
+        <span class="badge badge-carbonyl">Getting There: <strong id="count-learning">0</strong></span>
+        <span class="badge badge-carboxyl">Needs Review: <strong id="count-review">0</strong></span>
+        <span class="badge" style="background: var(--bg-subtle); border: 1px solid var(--border-subtle);">Card <strong id="card-pos">1 / 24</strong></span>
+      </div>
+
+      <!-- 3D Flip Card Stage -->
+      <div class="flashcard-stage">
+        <div class="flashcard-3d" id="flashcard-3d" tabindex="0" role="button" aria-label="Flip flashcard">
+          <!-- Front Face -->
+          <div class="flashcard-face flashcard-front">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-ester" id="fc-front-badge">Topic</span>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);" id="fc-status-pill">Unrated</span>
+            </div>
+
+            <div style="my: auto; padding: 1.5rem 0;">
+              <h2 style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 600; line-height: 1.35; color: var(--text-primary);" id="fc-question">
+                Loading question...
+              </h2>
+              <div id="fc-front-formula" style="margin-top: 1rem;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; font-size: 0.8rem; color: var(--text-muted);">
+              <span>Click card or press <strong>Space</strong> to flip</span>
+              <span>SQA Higher Unit 2</span>
+            </div>
+          </div>
+
+          <!-- Back Face -->
+          <div class="flashcard-face flashcard-back">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-alkene">Model SQA Answer</span>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">Click to flip back</span>
+            </div>
+
+            <div style="padding: 1rem 0; font-size: 0.98rem; color: var(--text-primary); line-height: 1.65;" id="fc-answer">
+              Loading answer...
+            </div>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Rate your confidence:</span>
+              <div style="display: flex; gap: 0.45rem;" onclick="event.stopPropagation();">
+                <button type="button" class="btn btn-sm" style="border-color: var(--fg-carboxyl); color: var(--fg-carboxyl);" data-rate="review">1. Needs Review</button>
+                <button type="button" class="btn btn-sm" style="border-color: var(--fg-carbonyl); color: var(--fg-carbonyl);" data-rate="learning">2. Getting There</button>
+                <button type="button" class="btn btn-sm" style="border-color: var(--fg-alkene); color: var(--fg-alkene);" data-rate="mastered">3. Mastered ✓</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prev / Flip / Next Controls -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem;">
+        <button type="button" class="btn" id="fc-prev-btn">&larr; Previous (<kbd>&larr;</kbd>)</button>
+        <button type="button" class="btn btn-primary" id="fc-flip-btn">Flip Card (<kbd>Space</kbd>)</button>
+        <button type="button" class="btn" id="fc-next-btn">Next (<kbd>&rarr;</kbd>) &rarr;</button>
+      </div>
+    </section>
+
+    <!-- All Cards Quick-Browse Grid -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Complete Flashcard Deck Reference</h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 0.2rem;">
+            Browse all 24 flashcards at a glance or click any card below to load it into the 3D stage above.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3" id="all-cards-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>SQA Higher Chemistry — Active-Recall Flashcards</strong><br>
+        Use keyboard shortcuts (<kbd>Space</kbd>, <kbd>&larr;</kbd>, <kbd>&rarr;</kbd>, <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>) for rapid revision.
+      </div>
+      <div>
+        <a href="quiz.html" class="btn btn-sm btn-primary">Proceed to Practice Quiz &amp; Lab Simulator &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    const FLASHCARDS = [
+      {
+        id: 'fc1',
+        cat: 'oxidation',
+        topic: 'Alcohol Classification',
+        badgeClass: 'badge-hydroxyl',
+        q: 'How do you distinguish structurally between a primary (1°), secondary (2°), and tertiary (3°) alcohol?',
+        formula: 'R–CH₂OH (1°)  •  R–CH(OH)–R\' (2°)  •  R₃C–OH (3°)',
+        a: 'Inspect the <strong>carbon atom directly bonded to the –OH group</strong>:<br>• <strong>Primary (1°):</strong> Attached to <strong>1</strong> (or 0) other carbon atoms (e.g. propan-1-ol).<br>• <strong>Secondary (2°):</strong> Attached to <strong>2</strong> other carbon atoms (e.g. propan-2-ol).<br>• <strong>Tertiary (3°):</strong> Attached to <strong>3</strong> other carbon atoms (e.g. 2-methylpropan-2-ol).'
+      },
+      {
+        id: 'fc2',
+        cat: 'oxidation',
+        topic: 'O:H Ratio Definition',
+        badgeClass: 'badge-carbonyl',
+        q: 'Define oxidation and reduction in the context of organic carbon compounds.',
+        formula: 'Ethanol (C₂H₆O, O:H = 1:6) → Ethanal (C₂H₄O, O:H = 1:4)',
+        a: '• <strong>Oxidation:</strong> An <strong>increase in the oxygen-to-hydrogen (O:H) ratio</strong> (either by gaining oxygen atoms or losing hydrogen atoms).<br>• <strong>Reduction:</strong> A <strong>decrease in the oxygen-to-hydrogen (O:H) ratio</strong> (losing oxygen atoms or gaining hydrogen atoms).'
+      },
+      {
+        id: 'fc3',
+        cat: 'oxidation',
+        topic: 'Alcohol Oxidation Products',
+        badgeClass: 'badge-carbonyl',
+        q: 'What are the products when a primary (1°), secondary (2°), and tertiary (3°) alcohol are treated with a mild oxidising agent?',
+        formula: '1° → Aldehyde → Carboxylic acid  |  2° → Ketone  |  3° → No reaction',
+        a: '• <strong>Primary (1°) alcohol:</strong> Oxidised first to an <strong>aldehyde</strong> (distillation), and on further oxidation to a <strong>carboxylic acid</strong> (reflux).<br>• <strong>Secondary (2°) alcohol:</strong> Oxidised to a <strong>ketone</strong> (cannot be oxidised further).<br>• <strong>Tertiary (3°) alcohol:</strong> <strong>No reaction</strong> (resists mild oxidation).'
+      },
+      {
+        id: 'fc4',
+        cat: 'oxidation',
+        topic: 'Oxidising Agent Colour Changes',
+        badgeClass: 'badge-carbonyl',
+        q: 'State the colour changes observed when a 1° or 2° alcohol is oxidised by (a) acidified potassium dichromate and (b) hot copper(II) oxide.',
+        formula: 'Cr₂O₇²⁻(aq) → Cr³⁺(aq)  |  CuO(s) → Cu(s)',
+        a: '• <strong>(a) Acidified potassium dichromate (K₂Cr₂O₇/H⁺):</strong> Solution turns from <strong>orange to green</strong>.<br>• <strong>(b) Hot copper(II) oxide (CuO):</strong> Solid changes from <strong>black to brown/pink</strong> copper metal.'
+      },
+      {
+        id: 'fc5',
+        cat: 'oxidation',
+        topic: 'Aldehydes vs Ketones Tests',
+        badgeClass: 'badge-carbonyl',
+        q: 'State two chemical reagents used to distinguish an aldehyde from a ketone, and give the positive observation for each.',
+        formula: 'Aldehyde (–CHO) oxidises; Ketone (–CO–) shows no change',
+        a: '1. <strong>Fehling’s (or Benedict’s) solution:</strong> Turns from a <strong>blue solution to a brick-red / orange-red precipitate</strong> (Cu₂O) with an aldehyde.<br>2. <strong>Tollens’ reagent:</strong> Turns from a <strong>colourless solution to a silver mirror</strong> (Ag metal) with an aldehyde.<br><em>(Acidified dichromate also turns orange to green with an aldehyde).</em>'
+      },
+      {
+        id: 'fc6',
+        cat: 'oxidation',
+        topic: 'Resistance to Oxidation',
+        badgeClass: 'badge-hydroxyl',
+        q: 'Why do tertiary (3°) alcohols and ketones resist oxidation by mild oxidising agents?',
+        formula: 'No C–H bond on the functional group carbon',
+        a: 'Neither molecule has a <strong>hydrogen atom directly bonded to the carbon atom bearing the functional group</strong> (C–OH or C=O). Oxidising them would require breaking a strong carbon-to-carbon (C–C) covalent bond.'
+      },
+      {
+        id: 'fc7',
+        cat: 'oxidation',
+        topic: 'Unsymmetrical Alkene Hydration',
+        badgeClass: 'badge-alkene',
+        q: 'What two alcohols are formed when propene reacts with steam (H₂O) over an acid catalyst, and which is the major product?',
+        formula: 'CH₃–CH=CH₂ + H₂O → CH₃CH(OH)CH₃ + CH₃CH₂CH₂OH',
+        a: '• <strong>Propan-2-ol</strong> (major product, secondary 2° alcohol)<br>• <strong>Propan-1-ol</strong> (minor product, primary 1° alcohol)<br>This is a <strong>hydration (addition)</strong> reaction.'
+      },
+      {
+        id: 'fc8',
+        cat: 'oxidation',
+        topic: 'Oxidation of Food & Antioxidants',
+        badgeClass: 'badge-carbonyl',
+        q: 'Why are antioxidants added to foods containing fats and oils, and how do they function in terms of redox?',
+        formula: 'C₆H₈O₆ (Vitamin C) → C₆H₆O₆ + 2H⁺ + 2e⁻',
+        a: 'Reaction with oxygen in the air causes fats and oils to turn <strong>rancid</strong>. <strong>Antioxidants</strong> (e.g. Vitamin C / ascorbic acid) are <strong>reducing agents</strong>: they easily undergo <strong>oxidation themselves</strong> (losing electrons) to prevent the food molecules from being oxidised.'
+      },
+      {
+        id: 'fc9',
+        cat: 'esters',
+        topic: 'Ester Naming & Formation',
+        badgeClass: 'badge-ester',
+        q: 'Name the ester formed from butan-1-ol and propanoic acid, and state the type of reaction.',
+        formula: 'Alcohol (-yl) + Carboxylic Acid (-oate) ⇌ Ester + Water',
+        a: '• <strong>Ester name:</strong> <strong>Butyl propanoate</strong> (<em>butyl</em> from butan-1-ol; <em>propanoate</em> from propanoic acid).<br>• <strong>Reaction type:</strong> <strong>Condensation</strong> (or esterification), eliminating H₂O.'
+      },
+      {
+        id: 'fc10',
+        cat: 'esters',
+        topic: 'Ester Structural Formula Trap',
+        badgeClass: 'badge-ester',
+        q: 'An ester has the shortened structural formula CH₃CH₂COOCH₃. Name this ester and identify the parent carboxylic acid and alcohol.',
+        formula: 'CH₃CH₂C(=O) — O — CH₃',
+        a: '• <strong>Name:</strong> <strong>Methyl propanoate</strong><br>• <strong>Parent carboxylic acid:</strong> <strong>Propanoic acid</strong> (CH₃CH₂COOH, containing the 3 carbons including C=O)<br>• <strong>Parent alcohol:</strong> <strong>Methanol</strong> (CH₃OH, attached to the single-bonded –O–).'
+      },
+      {
+        id: 'fc11',
+        cat: 'esters',
+        topic: 'Mandatory Ester Practical',
+        badgeClass: 'badge-ester',
+        q: 'In the lab preparation of an ester, state the role of: (a) conc. H₂SO₄, (b) the wet paper towel on the tube, (c) the water bath, and (d) NaHCO₃(aq).',
+        formula: 'Two positive signs: Sweet/fruity smell + Oily immiscible layer',
+        a: '• <strong>(a) Conc. H₂SO₄:</strong> Catalyst (supplies H⁺ ions and absorbs H₂O).<br>• <strong>(b) Wet paper towel:</strong> Acts as a <strong>condenser</strong> to cool volatile vapours.<br>• <strong>(c) Water bath:</strong> Safe heating because alcohols and esters are <strong>flammable</strong>.<br>• <strong>(d) NaHCO₃(aq):</strong> <strong>Neutralises</strong> unreacted carboxylic acid and H₂SO₄ catalyst.'
+      },
+      {
+        id: 'fc12',
+        cat: 'esters',
+        topic: 'Acid vs Alkaline Ester Hydrolysis',
+        badgeClass: 'badge-ester',
+        q: 'Why does alkaline hydrolysis of an ester (using NaOH) give a higher yield than acid-catalysed hydrolysis?',
+        formula: 'RCOOR\' + NaOH → RCOO⁻Na⁺ (salt) + R\'OH',
+        a: 'Acid hydrolysis is <strong>reversible</strong>. Alkaline hydrolysis is <strong>non-reversible (goes to completion)</strong> because the carboxylic acid reacts immediately with OH⁻ ions to form a stable <strong>carboxylate salt</strong> (e.g. sodium ethanoate), removing the acid from equilibrium.'
+      },
+      {
+        id: 'fc13',
+        cat: 'fats',
+        topic: 'Chemical Structure of Fats & Oils',
+        badgeClass: 'badge-ester',
+        q: 'What is the systematic name of glycerol, and what are edible fats and oils chemically?',
+        formula: '1 Glycerol + 3 Fatty Acids ⇌ 1 Triglyceride (Fat/Oil) + 3 H₂O',
+        a: '• <strong>Glycerol systematic name:</strong> <strong>Propane-1,2,3-triol</strong> (trihydric alcohol with 3 –OH groups).<br>• <strong>Fats and oils:</strong> Naturally occurring <strong>triesters (triglycerides)</strong> formed by the condensation of <strong>1 molecule of glycerol</strong> with <strong>3 fatty acid molecules</strong>.'
+      },
+      {
+        id: 'fc14',
+        cat: 'fats',
+        topic: 'Melting Points of Fats vs Oils',
+        badgeClass: 'badge-alkene',
+        q: 'Explain fully why vegetable oils have lower melting points than animal fats (3 marks).',
+        formula: 'Unsaturation (C=C) → Kinks → Poor Packing → Weaker LDFs',
+        a: '1. Oils have a <strong>higher degree of unsaturation</strong> (more C=C double bonds) than saturated fats.<br>2. The C=C double bonds create <strong>bends/kinks</strong> in the hydrocarbon chains, preventing the molecules from <strong>packing closely together</strong>.<br>3. This results in <strong>weaker London dispersion forces</strong> between oil molecules, requiring less heat energy to melt.'
+      },
+      {
+        id: 'fc15',
+        cat: 'fats',
+        topic: 'Hardening of Oils',
+        badgeClass: 'badge-alkene',
+        q: 'How are liquid unsaturated vegetable oils converted into solid spreadable fats ("hardened"), and what catalyst is used?',
+        formula: 'Unsaturated Oil + H₂ —(Ni catalyst)→ Hardened Fat',
+        a: 'By <strong>catalytic hydrogenation</strong> (an <strong>addition</strong> reaction with hydrogen gas, H₂) using a finely divided <strong>nickel (Ni) catalyst</strong>. Converting C=C double bonds into C–C single bonds straightens the chains so they pack more closely.'
+      },
+      {
+        id: 'fc16',
+        cat: 'fats',
+        topic: 'Saponification (Soap Making)',
+        badgeClass: 'badge-hydroxyl',
+        q: 'How are soaps manufactured from edible fats and oils, and what are the two products formed?',
+        formula: '1 Fat/Oil + 3 NaOH → 1 Glycerol + 3 Soap Salts (RCOO⁻Na⁺)',
+        a: 'By <strong>alkaline hydrolysis</strong> (saponification)—boiling the fat or oil under reflux with <strong>sodium hydroxide (NaOH)</strong> or potassium hydroxide (KOH).<br>Products: <strong>Glycerol</strong> (propane-1,2,3-triol) and <strong>3 fatty acid salts (soaps)</strong>.'
+      },
+      {
+        id: 'fc17',
+        cat: 'fats',
+        topic: 'Soap Structure & Cleaning Action',
+        badgeClass: 'badge-hydroxyl',
+        q: 'Describe the structure of a soap ion and explain how it removes non-polar grease using water.',
+        formula: 'Hydrophobic hydrocarbon tail + Hydrophilic –COO⁻ ionic head',
+        a: '• <strong>Structure:</strong> A long non-polar covalent hydrocarbon chain (<strong>hydrophobic tail</strong>) and an ionic negatively charged –COO⁻ carboxylate group (<strong>hydrophilic head</strong>).<br>• <strong>Action:</strong> Tails dissolve into non-polar grease; negatively charged heads remain in polar water. Agitation forms spherical <strong>micelles</strong> that repel each other, suspending grease as an <strong>emulsion</strong>.'
+      },
+      {
+        id: 'fc18',
+        cat: 'fats',
+        topic: 'Hard Water & Soapless Detergents',
+        badgeClass: 'badge-hydroxyl',
+        q: 'Why are soapless detergents preferred over traditional soap in hard water areas?',
+        formula: 'Hard water contains dissolved Ca²⁺ and Mg²⁺ ions',
+        a: 'Hard water contains dissolved <strong>Ca²⁺ and Mg²⁺ ions</strong>, which react with soap ions to form an insoluble precipitate called <strong>scum</strong>. <strong>Soapless detergents</strong> have ionic heads (e.g. sulfonates) that form <strong>soluble</strong> salts with Ca²⁺ and Mg²⁺, preventing scum.'
+      },
+      {
+        id: 'fc19',
+        cat: 'fats',
+        topic: 'Emulsifiers in Food',
+        badgeClass: 'badge-ester',
+        q: 'How are food emulsifiers made, and what are their hydrophilic and hydrophobic parts?',
+        formula: 'Monoglycerides (1 fatty acid) & Diglycerides (2 fatty acids)',
+        a: 'Made by reacting <strong>edible oils with glycerol</strong> so that only <strong>one or two</strong> fatty acid chains are esterified to the glycerol backbone.<br>• <strong>Hydrophilic head:</strong> Unreacted polar <strong>hydroxyl (–OH) groups</strong> on glycerol (dissolve in water).<br>• <strong>Hydrophobic tail:</strong> Non-polar <strong>fatty acid chains</strong> (dissolve in oil).'
+      },
+      {
+        id: 'fc20',
+        cat: 'proteins',
+        topic: 'Amino Acids & Peptide Links',
+        badgeClass: 'badge-amide',
+        q: 'Name the two functional groups present in all amino acids and draw the link formed when two amino acids condense.',
+        formula: '–NH₂ (amino) + –COOH (carboxyl) → –C(=O)–NH– (peptide link) + H₂O',
+        a: '• Functional groups: <strong>Amino group (–NH₂)</strong> and <strong>carboxyl group (–COOH)</strong>.<br>• They join in a <strong>condensation polymerisation</strong> reaction (eliminating H₂O) to form a <strong>peptide (amide) link: –CONH–</strong>.'
+      },
+      {
+        id: 'fc21',
+        cat: 'proteins',
+        topic: 'Protein Hydrolysis vs Denaturation',
+        badgeClass: 'badge-amide',
+        q: 'Explain the chemical difference between (a) protein hydrolysis and (b) protein denaturation.',
+        formula: 'Hydrolysis breaks covalent –CONH–  |  Denaturation breaks H-bonds',
+        a: '• <strong>(a) Hydrolysis:</strong> Reaction with water (+H₂O) breaks strong covalent <strong>peptide links (–CONH–)</strong>, splitting the protein into individual <strong>amino acids</strong> (identifiable by chromatography).<br>• <strong>(b) Denaturation:</strong> Heat or pH changes break weak intermolecular <strong>hydrogen bonds</strong>, unfolding the protein’s 3D shape (destroying enzyme active sites).'
+      },
+      {
+        id: 'fc22',
+        cat: 'proteins',
+        topic: 'Isoprene Unit Structure',
+        badgeClass: 'badge-alkene',
+        q: 'What is the systematic IUPAC name and molecular formula of an isoprene unit (the building block of terpenes)?',
+        formula: 'CH₂=C(CH₃)–CH=CH₂  (C₅H₈)',
+        a: '• <strong>Systematic name:</strong> <strong>2-methylbuta-1,3-diene</strong><br>• <strong>Molecular formula:</strong> <strong>C₅H₈</strong> (contains 5 carbon atoms and two conjugated C=C double bonds).'
+      },
+      {
+        id: 'fc23',
+        cat: 'proteins',
+        topic: 'Calculating Isoprene Units',
+        badgeClass: 'badge-alkene',
+        q: 'β-Carotene is an orange terpene pigment in carrots with the formula C₄₀H₅₆. How many isoprene units form one molecule of β-carotene?',
+        formula: 'Number of isoprene units = Total Carbons ÷ 5',
+        a: 'Since each isoprene unit (C₅H₈) contains <strong>5 carbon atoms</strong>:<br>40 ÷ 5 = <strong>8 isoprene units</strong>.'
+      },
+      {
+        id: 'fc24',
+        cat: 'proteins',
+        topic: 'Terpene Oxidation & Storage',
+        badgeClass: 'badge-carbonyl',
+        q: 'What happens when terpenes are oxidised in plants, and why are essential oils stored in dark brown glass bottles?',
+        formula: 'Terpene (C₁₀H₁₆) + [O] → Terpenoid (Alcohols, Aldehydes, Ketones)',
+        a: 'Oxidation of terpenes produces oxygenated <strong>terpenoids</strong> responsible for many distinctive spice/herb aromas (e.g. menthol → menthone). Essential oils are stored in <strong>dark brown bottles</strong> to block UV light and prevent unwanted oxidation in air from spoiling their fragrance.'
+      }
+    ];
+
+    let activeDeck = [...FLASHCARDS];
+    let currentCardIndex = 0;
+    let currentFilter = 'all';
+
+    const card3dEl = document.getElementById('flashcard-3d');
+
+    function getMasteryMap() {
+      return getSavedState(STORAGE_KEYS.FLASHCARDS, {});
+    }
+
+    function updateMasteryCounters() {
+      const map = getMasteryMap();
+      let mastered = 0, learning = 0, review = 0;
+      FLASHCARDS.forEach(c => {
+        const st = map[c.id];
+        if (st === 'mastered') mastered++;
+        else if (st === 'learning') learning++;
+        else if (st === 'review') review++;
+      });
+      document.getElementById('count-mastered').textContent = mastered;
+      document.getElementById('count-learning').textContent = learning;
+      document.getElementById('count-review').textContent = review;
+    }
+
+    function renderCurrentCard() {
+      card3dEl.classList.remove('is-flipped');
+
+      if (activeDeck.length === 0) {
+        document.getElementById('fc-front-badge').textContent = 'Deck Empty';
+        document.getElementById('fc-question').textContent = 'No cards match this filter! Switch back to "All Cards".';
+        document.getElementById('fc-front-formula').innerHTML = '';
+        document.getElementById('fc-answer').innerHTML = 'No cards in this filter.';
+        document.getElementById('card-pos').textContent = '0 / 0';
+        return;
+      }
+
+      if (currentCardIndex >= activeDeck.length) currentCardIndex = 0;
+      const card = activeDeck[currentCardIndex];
+      const map = getMasteryMap();
+      const status = map[card.id] || 'unrated';
+
+      const badgeEl = document.getElementById('fc-front-badge');
+      badgeEl.className = `badge ${card.badgeClass}`;
+      badgeEl.textContent = card.topic;
+
+      const statusLabels = {
+        mastered: 'Mastered ✓',
+        learning: 'Getting There',
+        review: 'Needs Review',
+        unrated: 'Not Rated Yet'
+      };
+      document.getElementById('fc-status-pill').textContent = statusLabels[status];
+      document.getElementById('fc-question').textContent = card.q;
+      document.getElementById('fc-front-formula').innerHTML = `<div class="chem-formula" style="display:inline-block; padding: 0.35rem 0.7rem;">${card.formula}</div>`;
+      document.getElementById('fc-answer').innerHTML = card.a;
+      document.getElementById('card-pos').textContent = `${currentCardIndex + 1} / ${activeDeck.length}`;
+
+      updateMasteryCounters();
+      renderAllCardsGrid();
+    }
+
+    function applyFilter(cat) {
+      currentFilter = cat;
+      const map = getMasteryMap();
+      if (cat === 'all') {
+        activeDeck = [...FLASHCARDS];
+      } else if (cat === 'review') {
+        activeDeck = FLASHCARDS.filter(c => map[c.id] === 'review' || !map[c.id]);
+      } else {
+        activeDeck = FLASHCARDS.filter(c => c.cat === cat);
+      }
+      currentCardIndex = 0;
+      renderCurrentCard();
+    }
+
+    function rateCard(rating) {
+      if (activeDeck.length === 0) return;
+      const card = activeDeck[currentCardIndex];
+      const map = getMasteryMap();
+      map[card.id] = rating;
+      setSavedState(STORAGE_KEYS.FLASHCARDS, map);
+
+      // Advance to next card smoothly
+      if (currentCardIndex < activeDeck.length - 1) {
+        currentCardIndex++;
+      } else {
+        currentCardIndex = 0;
+      }
+      renderCurrentCard();
+    }
+
+    function renderAllCardsGrid() {
+      const map = getMasteryMap();
+      const grid = document.getElementById('all-cards-grid');
+      grid.innerHTML = FLASHCARDS.map((c, idx) => {
+        const st = map[c.id];
+        let stBadge = '<span style="font-size:0.72rem; color:var(--text-muted);">Unrated</span>';
+        if (st === 'mastered') stBadge = '<span class="badge badge-alkene">Mastered ✓</span>';
+        else if (st === 'learning') stBadge = '<span class="badge badge-carbonyl">Getting There</span>';
+        else if (st === 'review') stBadge = '<span class="badge badge-carboxyl">Needs Review</span>';
+
+        return `
+          <div class="card" style="cursor: pointer; display: flex; flex-direction: column; justify-content: space-between;" data-jump="${idx}">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                <span class="badge ${c.badgeClass}">#${idx + 1} &bull; ${c.topic}</span>
+                ${stBadge}
+              </div>
+              <p style="font-weight: 600; font-size: 0.94rem; color: var(--text-primary); margin-bottom: 0.5rem;">${c.q}</p>
+            </div>
+            <div style="font-size: 0.84rem; color: var(--text-secondary); border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; margin-top: 0.5rem;">
+              ${c.a}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      grid.querySelectorAll('[data-jump]').forEach(el => {
+        el.addEventListener('click', () => {
+          const idx = parseInt(el.getAttribute('data-jump'), 10);
+          document.querySelectorAll('#deck-filters .filter-btn').forEach(b => b.classList.remove('active'));
+          document.querySelector('#deck-filters [data-cat="all"]').classList.add('active');
+          activeDeck = [...FLASHCARDS];
+          currentCardIndex = idx;
+          renderCurrentCard();
+          window.scrollTo({ top: 140, behavior: 'smooth' });
+        });
+      });
+    }
+
+    // Event Listeners
+    card3dEl.addEventListener('click', () => {
+      card3dEl.classList.toggle('is-flipped');
+    });
+
+    document.getElementById('fc-flip-btn').addEventListener('click', () => {
+      card3dEl.classList.toggle('is-flipped');
+    });
+
+    document.getElementById('fc-prev-btn').addEventListener('click', () => {
+      if (activeDeck.length === 0) return;
+      currentCardIndex = (currentCardIndex - 1 + activeDeck.length) % activeDeck.length;
+      renderCurrentCard();
+    });
+
+    document.getElementById('fc-next-btn').addEventListener('click', () => {
+      if (activeDeck.length === 0) return;
+      currentCardIndex = (currentCardIndex + 1) % activeDeck.length;
+      renderCurrentCard();
+    });
+
+    document.querySelectorAll('[data-rate]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        rateCard(btn.getAttribute('data-rate'));
+      });
+    });
+
+    document.querySelectorAll('#deck-filters .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#deck-filters .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.getAttribute('data-cat'));
+      });
+    });
+
+    document.getElementById('shuffle-deck-btn').addEventListener('click', () => {
+      for (let i = activeDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [activeDeck[i], activeDeck[j]] = [activeDeck[j], activeDeck[i]];
+      }
+      currentCardIndex = 0;
+      renderCurrentCard();
+    });
+
+    document.getElementById('reset-flashcards-btn').addEventListener('click', () => {
+      setSavedState(STORAGE_KEYS.FLASHCARDS, {});
+      renderCurrentCard();
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+      if (e.code === 'Space') {
+        e.preventDefault();
+        card3dEl.classList.toggle('is-flipped');
+      } else if (e.code === 'ArrowRight') {
+        document.getElementById('fc-next-btn').click();
+      } else if (e.code === 'ArrowLeft') {
+        document.getElementById('fc-prev-btn').click();
+      } else if (e.key === '1') {
+        rateCard('review');
+      } else if (e.key === '2') {
+        rateCard('learning');
+      } else if (e.key === '3') {
+        rateCard('mastered');
+      }
+    });
+
+    renderCurrentCard();
+  </script>
+</body>
+</html>
