@@ -1,11 +1,11 @@
-# SQA Higher Chemistry: Organic Reactions Revision Plan & Study Guide
+# Chemistry: Organic Reactions Revision Plan & Study Guide
 **Unit 2: Nature's Chemistry (with links to Unit 1 & Unit 3)**
 
 ---
 
 ## How to Use This Revision Plan
 
-Organic chemistry in SQA Higher Chemistry is built around **functional groups** and **interconversions**. Rather than memorising isolated facts, the fastest way to gain top marks is to understand:
+Organic chemistry in Chemistry is built around **functional groups** and **interconversions**. Rather than memorising isolated facts, the fastest way to gain top marks is to understand:
 1. **Which functional group** is present in the reactant(s).
 2. **What type of reaction** is occurring (addition, oxidation, condensation, hydrolysis, elimination, or neutralisation).
 3. **Which bonds break and form**, and what **reagents, catalysts, and laboratory conditions** are required.
@@ -83,7 +83,7 @@ This guide is structured into:
 +------------------+                                              +------------------+
 ```
 
-### Master Summary Table of SQA Higher Reactions
+### Master Summary Table of Reactions
 
 | Reaction Name | Reactants | Reagents / Catalyst / Conditions | Product(s) | Key Observation / Test |
 | :--- | :--- | :--- | :--- | :--- |
